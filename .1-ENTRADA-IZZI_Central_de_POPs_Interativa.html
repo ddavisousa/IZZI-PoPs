@@ -29,8 +29,26 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:var(--azul)}butto
 @media print{.sidebar,.filtros,.alerta_painel,.botao{display:none!important}.shell{display:block}.main{padding:0;max-width:100%}body{background:white}.painel{display:none!important}.painel.ativo{display:block!important}.procedimento{box-shadow:none;break-inside:avoid}.corpo_etapa{display:block}.topo h1{font-size:26px}details{break-inside:avoid}}
 .copiar_cnpj{appearance:none;display:inline-grid;place-items:center;margin-left:3px;width:22px;height:22px;padding:0;border:0;outline:0;border-radius:5px;background:transparent;box-shadow:none;color:#526ca9;opacity:1;vertical-align:middle;transition:opacity .16s ease,background-color .16s ease,transform .13s ease,color .16s ease}.copiar_cnpj svg{display:block;width:14px;height:14px}.campo li:hover .copiar_cnpj,.copiar_cnpj:hover,.copiar_cnpj:focus-visible{opacity:1;background:#eef3ff;color:#28468e}.copiar_cnpj:focus-visible{opacity:1;outline:2px solid #6f8de8;outline-offset:2px}.copiar_cnpj:active{transform:scale(.78)}.copiar_cnpj[data-copiado="true"]{opacity:1;color:#166747;background:#e8f6ee}@media print{.copiar_cnpj{display:none!important}}
 </style>
+<style>
+#capa { position: fixed; inset: 0; margin: 0; box-sizing: border-box; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; padding: 24px; background: #faf9f6; }
+#capa[open] { display: grid; place-items: center; }
+#capa img { display: block; width: min(68vw, 470px); height: auto; }
+#capa form { position: absolute; top: calc(50% + min(7.7vw, 53px) + 36px); margin: 0; }
+#capa button { border: 0; border-radius: 999px; padding: 13px 40px; background: #3048df; color: white; font: 600 1rem system-ui; cursor: pointer; }
+#capa button:hover { background: #2037bc; }
+body:has(#capa[open]) { overflow: hidden; }
+</style>
 <link rel="icon" type="image/svg+xml" href="izzi-guia.svg"></head>
 <body>
+<dialog id="capa" aria-label="Entrada da Central de POPs">
+  <img src="Izzi_Logo__Completo_Horizontal_Cor.png" alt="IZZI Inteligência Tributária">
+  <form method="dialog"><button type="submit">Entrar</button></form>
+</dialog>
+<script>
+  const capa = document.getElementById('capa');
+  capa.showModal();
+  capa.addEventListener('cancel', event => event.preventDefault());
+</script>
 <div class="shell">
 <aside class="sidebar" aria-label="Navegação principal">
 <div class="marca"><img class="logotipo" src="Izzi_Logo__Completo_Horizontal_Cor.png" alt="Izzi Inteligência Tributária"><p>CENTRAL DE PROCESSOS</p></div>
