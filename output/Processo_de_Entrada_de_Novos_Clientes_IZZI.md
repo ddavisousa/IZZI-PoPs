@@ -163,7 +163,7 @@ Utilizar navegação anônima e conferir o certificado e o CNPJ em cada acesso. 
 2. Abrir Autorizações de Acesso (Procurações) - Minhas Autorizações de Acesso e autenticar com gov.br quando solicitado.
 3. Se já houver autorização da IZZI, conferir o outorgado, os poderes, a validade e o aceite. Não excluir automaticamente uma autorização vigente por ter prazo menor.
 4. Para cadastrar uma nova autorização, clicar em Nova Autorização e informar o CNPJ da IZZI: 30.182.037/0001-49.
-5. Definir a validade conforme a regra interna confirmada. O prazo indicado nos POPs é de cinco anos; o ajuste de um dia mencionado no rascunho precisa de definição.
+5. Definir a validade de cinco anos a partir da data de hoje.
 6. Em Serviços Autorizados, selecionar Todos, conforme o POP e o escopo autorizado.
 7. Avançar, revisar e clicar em Assinar, mantendo o Assinador Serpro aberto. Selecionar o certificado do cliente para a assinatura da outorga.
 8. Confirmar a mensagem de autorização registrada com sucesso.
@@ -184,7 +184,7 @@ Concluir esta procuração quando: a autorização estiver cadastrada, aceita pe
 6. Informar e confirmar dp@izzicontabil.com.br como e-mail da IZZI.
 7. Selecionar os poderes previstos no POP para DET, FGTS Digital e Processo Eletrônico Administrativo Trabalhista, conforme o escopo autorizado.
 8. No FGTS Digital, conferir expressamente Bloqueio e Estorno, Gestão do Histórico e Parcelamento. Não presumir que o botão “Todos” incluiu esses três itens.
-9. Definir a Data Final conforme a regra interna confirmada: cinco anos nos PDFs, com ajuste de um dia mencionado no rascunho e ainda a definir.
+9. Definir a Data Final em cinco anos a partir da data de hoje.
 10. Avançar, revisar e assinar com o certificado do cliente no Assinador Serpro.
 11. Se houver erro de integração do assinador, solicitar a validação da configuração técnica antes de aceitar exceções de certificado local.
 12. Baixar o documento como “Procuração DET - [Nome do Cliente]”, arquivar e atualizar os controles.
@@ -346,7 +346,7 @@ Anexo A. Definições internas necessárias para padronização
 
 Estas definições resolvem os pontos em que os materiais divergem ou não apresentam uma orientação completa. Não impedem a execução das demais etapas independentes.
 
-- Validade RFB e DET/FGTS: Confirmar se o vencimento é a data correspondente a cinco anos ou cinco anos menos um dia. Os PDFs e o rascunho diferem.
+- Validade RFB e DET/FGTS: informar o vencimento em cinco anos a partir da data de hoje.
 - Procuração RFB já existente: Definir os critérios de renovação/substituição e a autorização para revogação. O rascunho orienta excluir prazo menor; a central orienta avaliar o impacto e obter autorização.
 - Telefone do outorgante na Agência Net: Definir o uso do telefone do cliente ou da IZZI na primeira tela. O telefone da IZZI como procuradora consta do POP.
 - Reset do Empregador Web: Confirmar a modalidade de representação, a documentação correspondente, a rota vigente para o DF e a frequência das consultas.

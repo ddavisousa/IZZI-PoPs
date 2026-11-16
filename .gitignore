@@ -1,5 +1,6 @@
 # Documentos pessoais e arquivos locais
 *.pdf
+!documentos/pops/*.pdf
 *.doc
 *.docx
 *.xls
@@ -15,3 +16,6 @@ Thumbs.db
 .DS_Store
 .vscode/
 .idea/
+
+# Arquivos de conferência local
+tmp/
