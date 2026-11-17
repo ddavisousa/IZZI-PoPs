@@ -32,6 +32,7 @@ button,input,select{font:inherit}button{cursor:pointer}a{color:var(--azul)}butto
 .acoes_documento{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.acoes_documento a{text-decoration:none}.original_documento{border:1px solid var(--borda);border-radius:10px;overflow:hidden;margin:12px 0}.original_documento>summary{background:#edf3ff}.pdf_original{display:block;width:100%;height:78vh;min-height:420px;border:0;background:#f3f5f9}.nota_documento{font-size:12px;color:var(--muted);margin:10px 14px}.dados_izzi{border:1px solid #c8e2f5;border-radius:11px;background:#f5faff;padding:16px;margin:16px 0}.dados_izzi h3,.titulo_transcricao{font-size:15px;margin:0 0 8px}.dados_izzi p{font-size:12px;color:var(--muted);margin:0 0 12px}.dados_izzi dl{margin:0}.dados_izzi dl>div{display:grid;grid-template-columns:minmax(125px,1fr) minmax(0,3fr);gap:12px;padding:9px 0;border-top:1px solid #dfe8f4}.dados_izzi dt{font-size:12px;font-weight:750}.dados_izzi dd{margin:0;font-size:13px;overflow-wrap:anywhere}.titulo_transcricao{margin-top:20px}.fonte_doc[hidden]{display:none}@media(max-width:600px){.dados_izzi dl>div{grid-template-columns:1fr;gap:3px}.fonte_doc .documento_conteudo{padding:12px}.pdf_original{min-height:360px}}@media print{.acoes_documento,.original_documento{display:none!important}}
 .quadro_procuradora{margin:0}.quadro_procuradora dl{margin-top:10px}.quadro_procuradora [role=status]{margin-left:8px;font-size:12px}.quadro_procuradora dl>div{padding:5px 0}.quadro_procuradora dd{min-width:0}.quadro_procuradora dl{margin:0}.quadro_procuradora dl>div{display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px;padding:2px 0;align-items:baseline;border-top:1px solid #edf0f6;font-size:13px}.quadro_procuradora dt{font-weight:650}.quadro_procuradora dd{margin:0;overflow-wrap:anywhere}.quadro_procuradora [role=status]:empty{display:none}@media(max-width:760px){#procuracao_sefaz .ficha{display:flex;flex-direction:column}#procuracao_sefaz .ficha>div{display:contents}#procuracao_sefaz .ficha .subtitulo,#procuracao_sefaz .ficha .passos{order:1}}</style>
 <style>
+ .menu button > svg{width:1em;height:1em;flex:none;margin-right:-7px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 #capa { position: fixed; inset: 0; margin: 0; box-sizing: border-box; width: 100%; height: 100%; max-width: none; max-height: none; border: 0; padding: 24px; background: #faf9f6; }
 #capa[open] { display: grid; place-items: center; }
 #capa img { display: block; width: min(68vw, 470px); height: auto; }
@@ -56,14 +57,15 @@ body:has(#capa[open]) { overflow: hidden; }
 <div class="marca"><img class="logotipo" src="Izzi_Logo__Completo_Horizontal_Cor.png" alt="Izzi Inteligência Tributária"><p>CENTRAL DE PROCESSOS</p></div>
 <div class="sidebar_grupo">Explorar o processo</div>
 <nav class="menu" id="menu" aria-label="Seções do painel">
-<button type="button" data-painel="visao" aria-current="page">◈ Visão geral</button>
-<button type="button" data-painel="pesquisa">⌕ Pesquisa</button><button type="button" data-painel="cadastro">▣ 1. Cadastro</button>
-<button type="button" data-painel="acessos">◉ 2. Certificados e gov.br</button>
-<button type="button" data-painel="procuracoes">⇄ 3. Procurações</button>
-<button type="button" data-painel="empregador">▤ 4. Empregador Web</button>
-<button type="button" data-painel="conferencia">✓ 5. Conferência</button>
-<button type="button" data-painel="regras">⚑ Regras e pendências</button>
-<button type="button" data-painel="fontes">▧ Biblioteca documental</button>
+<button type="button" data-painel="visao" aria-current="page"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M1.5 7.5 8 2l6.5 5.5M3.5 6v8h9V6M7 14V9h2v5"/></svg>Visão geral</button>
+<button type="button" data-painel="pesquisa"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><circle cx="6.7" cy="6.7" r="4.6"/><path d="m10.2 10.2 4 4"/></svg>Pesquisa</button>
+<button type="button" data-painel="cadastro"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><rect x="1.5" y="3" width="13" height="10" rx="1.5"/><circle cx="5.5" cy="6.5" r="1.3"/><path d="M3.3 10.7q2.2-3 4.4 0M10 6h2M10 9h2"/></svg>1. Cadastro</button>
+<button type="button" data-painel="acessos"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 1.5 13.5 4v4c0 3-2.5 5.2-5.5 6.5C5 13.2 2.5 11 2.5 8V4Z"/><path d="m5.5 8 1.6 1.6 3.5-3.5"/></svg>2. Certificados e gov.br</button>
+<button type="button" data-painel="procuracoes"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M6 14H2.5V2H10l2 2v2M5 5h3M5 8h2M8 13l1-3 4-4 2 2-4 4Z"/></svg>3. Procurações</button>
+<button type="button" data-painel="empregador"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><rect x="1.5" y="5" width="13" height="9" rx="1.5"/><path d="M5.5 5V3h5v2M2 8.5q6 3 12 0M8 9.5V11"/></svg>4. Empregador Web</button>
+<button type="button" data-painel="conferencia"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="m4.5 8 2.3 2.4 4.8-5"/></svg>5. Conferência</button>
+<button type="button" data-painel="regras"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M3 14V2q2.5-1 5 .4t5-.1v7q-2.5 1.4-5 .1T3 9"/></svg>Regras e pendências</button>
+<button type="button" data-painel="fontes"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 4q-2.5-2-6.5-1v9q4-1 6.5 1 2.5-2 6.5-1V3q-4-1-6.5 1Zm0 0v9"/></svg>Biblioteca documental</button>
 </nav>
 </aside>
 <main class="main" id="conteudo">
