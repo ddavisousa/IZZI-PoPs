@@ -186,8 +186,10 @@ function atualizar_resultados(grupo){
  const itens=etapas.filter(e=>e.grupo===grupo).map(e=>{
   const el=document.getElementById(e.id);
   if(!porEtapa.has(e.id)){
-   porEtapa.set(e.id,entrada(e.numero+' · '+e.titulo,nomes_grupos[grupo],
-    textoPesquisavel(el),{etapa:e.id}));
+   const item=entrada(e.numero+' · '+e.titulo,'',
+    [...(e.pre||[]),...(e.passos||[])].join(' '),{etapa:e.id});
+   item.secao=nomes_grupos[grupo];
+   porEtapa.set(e.id,item);
   }
   return {el,pontos:relevancia(porEtapa.get(e.id),consulta)};
  }).sort((a,b)=>b.pontos-a.pontos);
