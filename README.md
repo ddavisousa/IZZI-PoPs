@@ -4,7 +4,7 @@ Projeto de páginas HTML para consulta interativa de Procedimentos Operacionais 
 
 ## Páginas
 
-- `.1-ENTRADA-IZZI_Central_de_POPs_Interativa.html` — central interativa de procedimentos.
+- `CENTRAL_DE_PROCESSO_IZZI.html` — central interativa de procedimentos.
 - `Fluxograma_e-CAC_Procuracao_RFB.html` — fluxograma do processo de procuração no e-CAC/RFB.
 
 Abra os arquivos HTML diretamente no navegador. O projeto é estático e não requer instalação.
