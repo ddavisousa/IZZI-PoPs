@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>IZZI | Fluxograma e-CAC · Procuração RFB</title>
+    <link rel="stylesheet" href="../assets/css/fluxograma.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/izzi-guia.svg">
+  </head>
+  <body>
+    <main class="main">
+      <nav class="barra_topo" aria-label="Navegação do fluxograma">
+        <a class="btn_acao" href="../index.html#procuracao_rfb">← Voltar para a etapa 3.1 na Central</a>
+        <button type="button" class="btn_acao" onclick="window.print()">Imprimir / Salvar PDF</button>
+      </nav>
+      <header class="topo">
+        <div>
+          <span class="sobretitulo">Central de processos</span>
+          <h1>e-CAC: procuração RFB</h1>
+          <p>Fluxo para cadastrar a autorização da IZZI e concluir o aceite com o certificado digital da empresa.</p>
+        </div>
+        <img class="marca" src="../assets/img/izzi-logo.png" alt="Izzi Inteligência Tributária">
+      </header>
+      <section class="cartao">
+        <div class="meta">
+          <span class="pill">3.1 · Procurações</span>
+          <span class="pill">e-CAC · gov.br · Assinador Serpro</span>
+        </div>
+        <h2 class="subtitulo">Fluxo principal</h2>
+        <div class="flow">
+          <div class="node start">
+            <span class="tag">Início</span>
+            <strong>Acessar o e-CAC</strong>
+            <p>Abra uma janela anônima e entre com o certificado digital do cliente.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="node">
+            <span class="tag">Navegação</span>
+            <strong>Minhas Autorizações de Acesso</strong>
+            <p>Acesse “Autorizações de Acesso (Procurações)” e depois “Minhas Autorizações de Acesso”. Entre com gov.br se o portal solicitar.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="node">
+            <span class="tag">Nova autorização</span>
+            <strong>Iniciar cadastro da IZZI</strong>
+            <p>Clique em “Nova Autorização” e informe o CNPJ 30.182.037/0001-49 como pessoa autorizada.</p>
+          </div>
+        </div>
+        <div class="arrow_down" aria-hidden="true">
+          ↓
+        </div>
+        <div class="flow">
+          <div class="node">
+            <span class="tag">Validade</span>
+            <strong>Definir o prazo de 5 anos</strong>
+            <p>Para a IZZI, usar cinco anos e a data final um dia antes da data correspondente, conforme a orientação operacional recebida.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="node">
+            <span class="tag">Serviços</span>
+            <strong>Autorizar todos os serviços</strong>
+            <p>Na aba “Serviços”, selecionar “Todos” para a IZZI e avançar.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="node">
+            <span class="tag">Assinatura</span>
+            <strong>Assinar com o certificado do cliente</strong>
+            <p>Revise os dados, clique em “Assinar” e selecione o certificado digital do cliente. Confirme a mensagem “Autorização registrada com sucesso!”.</p>
+          </div>
+        </div>
+        <div class="arrow_down" aria-hidden="true">
+          ↓
+        </div>
+        <div class="node end">
+          <span class="tag">Aceite pela IZZI</span>
+          <strong>Entrar com o certificado da IZZI e validar</strong>
+          <p>Abra uma nova sessão do e-CAC com o certificado da IZZI. Em “Minhas Autorizações de Acesso” → “Recebidas”, localize a procuração do cliente e clique em “Validar” → “Confirmar”. Depois, visualize e salve o PDF.</p>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Se já existir uma autorização vigente</h2>
+        <div class="branch">
+          <div class="decision">
+            <strong>O portal informa que já existe uma autorização vigente?</strong>
+            <p>Cancelar o novo cadastro e conferir a lista de autorizações.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="routes">
+            <div class="route ok">
+              <b>IZZI na lista, validade de 5 anos</b>
+              <p>Conferir o nome, os poderes e o vencimento. Na sessão da IZZI, verificar em “Recebidas” se a autorização foi validada antes de encerrar.</p>
+            </div>
+            <div class="route warn">
+              <b>IZZI na lista, prazo menor que 5 anos</b>
+              <p>Excluir pela lixeira e repetir o fluxo para cadastrar novamente com a validade orientada.</p>
+            </div>
+            <div class="route stop">
+              <b>Não encontrou ou não conseguiu confirmar</b>
+              <p>Não presumir que o aceite está concluído. Conferir os dados e encaminhar a divergência para validação interna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Resumo de execução</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <div>
+              <b>Preparar os certificados</b>
+              <p>Certificado do cliente para criar a autorização; certificado da IZZI para o aceite.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <div>
+              <b>Criar a autorização no e-CAC</b>
+              <p>Entrar em “Minhas Autorizações”, iniciar uma nova autorização e informar o CNPJ da IZZI.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <div>
+              <b>Configurar validade e serviços</b>
+              <p>Aplicar a validade de cinco anos com ajuste de um dia e selecionar todos os serviços.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <div>
+              <b>Assinar e confirmar</b>
+              <p>Assinar a criação com o certificado do cliente. Depois, acessar o e-CAC com o certificado da IZZI e validar a procuração em “Recebidas”.</p>
+            </div>
+          </div>
+        </div>
+        <div class="note">
+          <strong>Antes de concluir:</strong>
+          confirme em “Recebidas” que a procuração está validada pela IZZI e que o prazo está correto. Uma autorização já vigente pode exigir apenas conferência, sem novo cadastro.
+        </div>
+      </section>
+      <div class="endbar">
+        Concluído quando a autorização estiver registrada, validada pela IZZI e com o PDF salvo.
+      </div>
+      <footer class="foot">Material de consulta operacional da IZZI. O conteúdo do fluxo foi organizado a partir das instruções fornecidas para este processo.</footer>
+    </main>
+  </body>
+</html>

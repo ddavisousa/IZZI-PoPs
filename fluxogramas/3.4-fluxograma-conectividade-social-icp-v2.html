@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>IZZI | Fluxograma Conectividade Social ICP V2</title>
+    <link rel="stylesheet" href="../assets/css/fluxograma.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/izzi-guia.svg">
+  </head>
+  <body>
+    <main class="main">
+      <nav class="barra_topo" aria-label="Navegação do fluxograma">
+        <a class="btn_acao" href="../index.html#procuracao_conectividade">← Voltar para a etapa 3.4 na Central</a>
+        <button type="button" class="btn_acao" onclick="window.print()">Imprimir / Salvar PDF</button>
+      </nav>
+      <header class="topo">
+        <div>
+          <span class="sobretitulo">Central de processos</span>
+          <h1>Conectividade Social ICP V2</h1>
+          <p>Registrar certificado quando necessário e criar procuração para a equipe de DP.</p>
+        </div>
+        <img class="marca" src="../assets/img/izzi-logo.png" alt="Izzi Inteligência Tributária">
+      </header>
+      <section class="cartao">
+        <div class="meta">
+          <span class="pill">3.4 · Procurações</span>
+          <span class="pill">Conectividade Social ICP V2</span>
+        </div>
+        <h2 class="subtitulo">Fluxo principal</h2>
+        <div class="fluxo_container">
+          <div class="flow">
+            <div class="node start">
+              <span class="tag">Início</span>
+              <strong>Entrar no portal da CAIXA</strong>
+              <p>Acesse “Conectividade Social ICP V2” com o certificado digital da empresa.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Registro</span>
+              <strong>Verificar o certificado</strong>
+              <p>Em “Registro” → “Registrar Certificado”, confira se o certificado da empresa já está registrado.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Se necessário</span>
+              <strong>Registrar como Empresa</strong>
+              <p>Selecione o perfil “Empresa”, aceite o contrato, baixe e arquive o comprovante de registro.</p>
+            </div>
+          </div>
+          <div class="arrow_down" aria-hidden="true">
+            ↓
+          </div>
+          <div class="flow">
+            <div class="node ">
+              <span class="tag">Outorga</span>
+              <strong>Abrir Procuração → Outorgar</strong>
+              <p>Inicie nova sessão quando necessário e confira os dados da empresa outorgante.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">IZZI</span>
+              <strong>Informar o CNPJ da procuradora</strong>
+              <p>Selecione CNPJ e informe 30.182.037/0001-49; confira os dados carregados.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Serviços</span>
+              <strong>Conferir serviços autorizados</strong>
+              <p>Adicione os serviços aprovados, revise “Serviços Selecionados” e avance.</p>
+            </div>
+          </div>
+          <div class="arrow_down" aria-hidden="true">
+            ↓
+          </div>
+          <div class="node end">
+            <span class="tag">Conclusão</span>
+            <strong>Confirmar e arquivar</strong>
+            <p>Aceite o termo, confirme as empresas, baixe a procuração e atualize os controles.</p>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Verificação do certificado</h2>
+        <div class="branch">
+          <div class="decision">
+            <strong>O portal informa que o certificado já está registrado?</strong>
+            <p>Confira a mensagem antes de repetir o registro.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="routes">
+            <div class="route ok">
+              <b>Sim: registro existente</b>
+              <p>Não registre novamente; vá direto a “Procuração” → “Outorgar”.</p>
+            </div>
+            <div class="route warn">
+              <b>Não: registro pendente</b>
+              <p>Conclua o registro, baixe o contrato e depois siga para a outorga.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Pontos de conferência</h2>
+        <div class="note">
+          <strong>Atenção:</strong>
+          O POP indica “Adicionar todos”; confira os serviços autorizados antes de confirmar.
+        </div>
+        <div class="note">
+          <strong>Atenção:</strong>
+          O PDF orienta arquivar na pasta Receita Federal (RFB). Confirme se esse caminho continua vigente.
+        </div>
+      </section>
+      <div class="endbar">
+        Procuração concluída, baixada e arquivada; confirmação registrada.
+      </div>
+      <footer class="foot">Material de consulta operacional da IZZI. Consulte a etapa 3.4 na Central de POPs para o procedimento detalhado e as fontes.</footer>
+    </main>
+  </body>
+</html>
