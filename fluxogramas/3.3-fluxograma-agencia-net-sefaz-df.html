@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>IZZI | Fluxograma Agência Net: procuração SEFAZ-DF</title>
+    <link rel="stylesheet" href="../assets/css/fluxograma.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/izzi-guia.svg">
+  </head>
+  <body>
+    <main class="main">
+      <nav class="barra_topo" aria-label="Navegação do fluxograma">
+        <a class="btn_acao" href="../index.html#procuracao_sefaz">← Voltar para a etapa 3.3 na Central</a>
+        <button type="button" class="btn_acao" onclick="window.print()">Imprimir / Salvar PDF</button>
+      </nav>
+      <header class="topo">
+        <div>
+          <span class="sobretitulo">Central de processos</span>
+          <h1>Agência Net: procuração SEFAZ-DF</h1>
+          <p>Conceder poderes fiscais pelo Agência Net quando o cliente pertence ao Distrito Federal.</p>
+        </div>
+        <img class="marca" src="../assets/img/izzi-logo.png" alt="Izzi Inteligência Tributária">
+      </header>
+      <section class="cartao">
+        <div class="meta">
+          <span class="pill">3.3 · Procurações</span>
+          <span class="pill">Agência Net / SEFAZ-DF</span>
+        </div>
+        <h2 class="subtitulo">Fluxo principal</h2>
+        <div class="fluxo_container">
+          <div class="flow">
+            <div class="node start">
+              <span class="tag">Aplicabilidade</span>
+              <strong>Confirmar cliente do DF</strong>
+              <p>Verifique se o cliente é do Distrito Federal e se há CF/DF correspondente ao CNPJ.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Acesso</span>
+              <strong>Entrar no Agência Net</strong>
+              <p>Use o certificado digital do cliente e abra “Serviços” → “Procuração Eletrônica” → “Cadastrar Procuração Eletrônica”.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Tipo</span>
+              <strong>Selecionar Para terceiros</strong>
+              <p>Escolha “Para terceiros”, informe o CF/DF do cliente e clique em “Consultar”.</p>
+            </div>
+          </div>
+          <div class="arrow_down" aria-hidden="true">
+            ↓
+          </div>
+          <div class="flow">
+            <div class="node ">
+              <span class="tag">Procuradora</span>
+              <strong>Preencher os dados da IZZI</strong>
+              <p>Confira CNPJ, CRC, razão social e endereço na ficha atual. Informe o telefone do cliente ou da IZZI.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Poderes</span>
+              <strong>Selecionar os poderes aprovados</strong>
+              <p>O POP orienta selecionar todos os poderes; confira a autorização aplicável antes de avançar.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Validade</span>
+              <strong>Conferir a opção Indeterminada</strong>
+              <p>Selecione “Indeterminada” apenas se estiver disponível e autorizada. Revise e salve no portal.</p>
+            </div>
+          </div>
+          <div class="arrow_down" aria-hidden="true">
+            ↓
+          </div>
+          <div class="node end">
+            <span class="tag">Conclusão</span>
+            <strong>Baixar e arquivar</strong>
+            <p>Imprima ou baixe a procuração, renomeie com o nome do cliente e salve na pasta SEFAZ.</p>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Se o cadastro não puder avançar</h2>
+        <div class="branch">
+          <div class="decision">
+            <strong>O cliente é do DF e possui CF/DF localizável?</strong>
+            <p>Confirme o CNPJ na consulta de CF/DF antes de preencher o portal.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="routes">
+            <div class="route ok">
+              <b>CF/DF encontrado</b>
+              <p>Siga o fluxo principal e confira os dados antes de salvar.</p>
+            </div>
+            <div class="route warn">
+              <b>Cliente do DF sem CF/DF na consulta</b>
+              <p>Registre a ausência na Jornada do Cliente e informe os responsáveis para orientação.</p>
+            </div>
+            <div class="route stop">
+              <b>Cliente fora do DF</b>
+              <p>Este POP não se aplica. Consulte a orientação do ente competente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Pontos de conferência</h2>
+        <div class="note">
+          <strong>Atenção:</strong>
+          Para empresas de fora do Distrito Federal, não é necessário emitir procuração SEFAZ-DF.
+        </div>
+      </section>
+      <div class="endbar">
+        Procuração gerada e arquivada para cliente do DF.
+      </div>
+      <footer class="foot">Material de consulta operacional da IZZI. Consulte a etapa 3.3 na Central de POPs para o procedimento detalhado e as fontes.</footer>
+    </main>
+  </body>
+</html>

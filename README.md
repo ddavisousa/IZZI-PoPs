@@ -2,16 +2,20 @@
 
 Projeto de páginas HTML para consulta interativa de Procedimentos Operacionais Padrão (POPs) e fluxos de trabalho da IZZI.
 
-## Páginas
+## Estrutura do projeto
 
-- `CENTRAL_DE_PROCESSO_IZZI.html` — central interativa de procedimentos.
-- `Fluxograma_e-CAC_Procuracao_RFB.html` — fluxograma do processo de procuração no e-CAC/RFB.
+- `index.html` — central interativa de procedimentos (página principal).
+- `fluxogramas/` — fluxogramas individuais dos procedimentos de procuração:
+  - `3.1-fluxograma-ecac-procuracao-rfb.html`
+  - `3.2-fluxograma-spe-procuracao-det-fgts.html`
+  - `3.3-fluxograma-agencia-net-sefaz-df.html`
+  - `3.4-fluxograma-conectividade-social-icp-v2.html`
+- `assets/css/styles.css` — estilos da aplicação.
+- `assets/js/dados.js` — base de dados das etapas, fontes documentais, pendências e fluxogramas.
+- `assets/js/app.js` — lógica de renderização, filtros, busca e ações da interface.
+- `assets/img/` — logotipo (`izzi-logo.png`) e ícone (`izzi-guia.svg`).
+- `documentos/pops/` — os 17 PDFs originais dos POPs.
 
-Abra os arquivos HTML diretamente no navegador. O projeto é estático e não requer instalação.
+Abra o `index.html` diretamente no navegador. O projeto é estático e não requer instalação.
 
-Na Biblioteca documental, cada POP possui texto integral pesquisável por página e acesso ao PDF original, para visualizar ou baixar. Os 17 PDFs ficam em `documentos/pops/`; mantenha essa pasta junto ao HTML ao copiar a central. O rascunho complementar permanece identificado separadamente.
-
-## Recursos
-
-- `Izzi_Logo__Completo_Horizontal_Cor.png` — logotipo usado nas páginas.
-
+Na Biblioteca documental, cada POP possui texto integral pesquisável por página e acesso ao PDF original, para visualizar ou baixar. Mantenha as pastas `assets/`, `fluxogramas/` e `documentos/` junto ao `index.html` ao copiar a central. O rascunho complementar permanece identificado separadamente.

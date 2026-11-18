@@ -1,15 +1,334 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0; url=CENTRAL_DE_PROCESSO_IZZI.html">
-    <title>IZZI | Central de POPs</title>
-    <script>
-      window.location.replace("CENTRAL_DE_PROCESSO_IZZI.html" + location.search + location.hash);
-    </script>
-  </head>
-  <body>
-    <p>Abrindo a <a href="CENTRAL_DE_PROCESSO_IZZI.html">Central de POPs da IZZI</a>…</p>
-  </body>
+<head>
+  <!-- Metadados básicos do documento e configuração de viewport/tema -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>IZZI | Central de Procedimentos Operacionais</title>
+  <!-- Ícone exibido na aba do navegador -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/izzi-guia.svg">
+  <!-- Folha de estilos principal -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- =====================================================================
+       TELA DE CAPA (MODAL DE ENTRADA)
+       Exibida ao abrir a página; o formulário com method="dialog" fecha o modal ao clicar em "Entrar".
+       ===================================================================== -->
+  <dialog id="capa" aria-label="Entrada da Central de POPs">
+    <img src="assets/img/izzi-logo.png" alt="IZZI Inteligência Tributária">
+    <form method="dialog">
+      <button type="submit">Entrar</button>
+    </form>
+  </dialog>
+
+  <!-- =====================================================================
+       ESTRUTURA PRINCIPAL DA APLICAÇÃO (BARRA LATERAL + CONTEÚDO)
+       ===================================================================== -->
+  <div class="shell">
+    <!-- Barra lateral fixa com a logomarca e o menu de navegação entre painéis -->
+    <aside class="sidebar" aria-label="Navegação principal">
+      <div class="marca">
+        <img class="logotipo" src="assets/img/izzi-logo.png" alt="Izzi Inteligência Tributária">
+        <p>CENTRAL DE PROCESSOS</p>
+      </div>
+
+      <div class="sidebar_grupo">Explorar o processo</div>
+
+      <!-- Menu principal: cada botão possui data-painel correspondente ao id "painel_<nome>" -->
+      <nav class="menu" id="menu" aria-label="Seções do painel">
+        <button type="button" data-painel="visao" aria-current="page">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <path d="M1.5 7.5 8 2l6.5 5.5M3.5 6v8h9V6M7 14V9h2v5" />
+          </svg>
+          Visão geral
+        </button>
+        <button type="button" data-painel="pesquisa">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <circle cx="6.7" cy="6.7" r="4.6" />
+            <path d="m10.2 10.2 4 4" />
+          </svg>
+          Pesquisa
+        </button>
+        <button type="button" data-painel="cadastro">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <rect x="1.5" y="3" width="13" height="10" rx="1.5" />
+            <circle cx="5.5" cy="6.5" r="1.3" />
+            <path d="M3.3 10.7q2.2-3 4.4 0M10 6h2M10 9h2" />
+          </svg>
+          1. Cadastro
+        </button>
+        <button type="button" data-painel="acessos">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <path d="M8 1.5 13.5 4v4c0 3-2.5 5.2-5.5 6.5C5 13.2 2.5 11 2.5 8V4Z" />
+            <path d="m5.5 8 1.6 1.6 3.5-3.5" />
+          </svg>
+          2. Certificados e gov.br
+        </button>
+        <button type="button" data-painel="procuracoes">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <path d="M6 14H2.5V2H10l2 2v2M5 5h3M5 8h2M8 13l1-3 4-4 2 2-4 4Z" />
+          </svg>
+          3. Procurações
+        </button>
+        <button type="button" data-painel="empregador">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <rect x="1.5" y="5" width="13" height="9" rx="1.5" />
+            <path d="M5.5 5V3h5v2M2 8.5q6 3 12 0M8 9.5V11" />
+          </svg>
+          4. Empregador Web
+        </button>
+        <button type="button" data-painel="conferencia">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <rect x="2" y="2" width="12" height="12" rx="2" />
+            <path d="m4.5 8 2.3 2.4 4.8-5" />
+          </svg>
+          5. Conferência
+        </button>
+        <button type="button" data-painel="regras">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <path d="M3 14V2q2.5-1 5 .4t5-.1v7q-2.5 1.4-5 .1T3 9" />
+          </svg>
+          Regras e pendências
+        </button>
+        <button type="button" data-painel="fontes">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+            <path d="M8 4q-2.5-2-6.5-1v9q4-1 6.5 1 2.5-2 6.5-1V3q-4-1-6.5 1Zm0 0v9" />
+          </svg>
+          Biblioteca documental
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Área principal onde os painéis são alternados dinamicamente -->
+    <main class="main" id="conteudo">
+      <!-- Cabeçalho superior com título da central e espaço (#ferramentas) para a barra de busca da aba ativa -->
+      <header class="topo">
+        <div>
+          <span class="sobretitulo">Operações · Customer Success</span>
+          <h1>Entrada e habilitação de novos clientes</h1>
+          <p>Um fluxo único para consultar o passo a passo, entender dependências, identificar exceções e conferir
+            atividades.</p>
+        </div>
+        <div class="topo_acoes">
+          <span class="versao">Consolidação documental · versão de trabalho</span>
+          <div id="ferramentas"></div>
+        </div>
+      </header>
+
+      <!-- PAINEL: Visão Geral (Mapa das 5 fases, ordem de execução, exceções e guia de uso) -->
+      <section id="painel_visao" class="painel ativo" aria-label="Visão geral">
+        <div class="secao_titulo">
+          <h2>Mapa do processo</h2>
+          <p>Selecione uma fase para consultar as instruções</p>
+        </div>
+
+        <!-- Botões de atalho rápido para cada uma das 5 fases -->
+        <div class="fluxo">
+          <button class="fase" data-destino="cadastro">
+            <span class="fase_num">FASE 01</span>
+            <strong>Entrada e cadastros</strong>
+            <small>Slack · CNPJ · Domínio · Notion · Gestta · contatos</small>
+          </button>
+          <button class="fase" data-destino="acessos">
+            <span class="fase_num">FASE 02</span>
+            <strong>Certificados e acessos</strong>
+            <small>Disponibilidade · instalação · gov.br</small>
+          </button>
+          <button class="fase" data-destino="procuracoes">
+            <span class="fase_num">FASE 03</span>
+            <strong>Procurações</strong>
+            <small>RFB → DET → SEFAZ-DF → Conectividade</small>
+          </button>
+          <button class="fase" data-destino="empregador">
+            <span class="fase_num">FASE 04</span>
+            <strong>Empregador Web</strong>
+            <small>Aplicabilidade · procuração · reset</small>
+          </button>
+          <button class="fase" data-destino="conferencia">
+            <span class="fase_num">FASE 05</span>
+            <strong>Conferência final</strong>
+            <small>Prazos · evidências · encerramento</small>
+          </button>
+        </div>
+
+        <!-- Cartões de fluxo principal e ramos/exceções -->
+        <div class="dividido">
+          <div class="cartao">
+            <h3>Ordem principal de execução</h3>
+            <div class="caminho">
+              <span>Slack</span><b>→</b>
+              <span>CNPJ</span><b>→</b>
+              <span>Domínio</span><b>→</b>
+              <span>Jornada, Base e Notion</span><b>→</b>
+              <span>Cliente / documentos</span><b>→</b>
+              <span>Certificado</span><b>→</b>
+              <span>Procurações</span><b>→</b>
+              <span>Conferir</span>
+            </div>
+            <p>O contato com a contabilidade anterior começa assim que o e-mail é confirmado. A gestão de pendências
+              acompanha todas as etapas, e processos independentes podem avançar simultaneamente.</p>
+          </div>
+
+          <div class="cartao">
+            <h3>Ramos e exceções</h3>
+            <div class="regra_fluxo">
+              <div><strong>gov.br exige verificação?</strong> Solicitar confirmação autorizada; enquanto aguarda,
+                adiantar SEFAZ-DF/Conectividade quando possível.</div>
+              <div><strong>Cliente fora do DF?</strong> O POP Agência Net/SEFAZ-DF não se aplica; outros entes ainda
+                carecem de instruções.</div>
+              <div><strong>Empregador Web inacessível?</strong> Seguir o reset pelo Portal do Cidadão quando o cadastro
+                anterior estiver inacessível.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="secao_titulo">
+          <h2>Como utilizar</h2>
+        </div>
+        <div class="cartao">
+          <p>Abra uma fase no menu lateral. Pesquise por nome, sistema, documento ou expressão do procedimento. Expanda
+            uma etapa para consultar pré-requisitos, sequência, pontos de decisão, critérios de conclusão e fonte. A
+            Central de Processos IZZI é voltada ao aprendizado e ao entendimento dos processos do time de CS. Ela
+            permite praticar o acompanhamento <strong>sem gravar dados de cliente</strong>.</p>
+        </div>
+      </section>
+
+      <!-- PAINEL: Pesquisa Global (busca em procedimentos, visão geral, regras, biblioteca documental e fluxogramas) -->
+      <section id="painel_pesquisa" class="painel" aria-label="Pesquisa">
+        <div class="cabecalho-pesquisa">
+          <h2>Pesquisa</h2>
+          <label class="alternar-biblioteca">
+            <span>Biblioteca documental</span>
+            <input id="incluir_biblioteca" type="checkbox" role="switch"
+              aria-label="Incluir Biblioteca Documental na pesquisa">
+          </label>
+        </div>
+        <label class="busca">
+          <input id="consulta_geral" type="search" placeholder="Pesquisar tarefas e procedimentos"
+            aria-label="Pesquisar tarefas e procedimentos">
+        </label>
+        <p id="total_geral" role="status"></p>
+        <div id="achados"></div>
+      </section>
+
+      <!-- PAINEL: Fase 1 - Cadastro (as etapas são preenchidas via JS em #etapas_cadastro) -->
+      <section id="painel_cadastro" class="painel" aria-label="Cadastro de novos clientes">
+        <div class="secao_titulo">
+          <h2>1. Entrada, cadastro e comunicação</h2>
+          <p>Execução inicial · atividades da equipe e dependências externas</p>
+        </div>
+        <div class="filtros" data-filtros="cadastro"></div>
+        <div class="resultado_busca" id="resultado_cadastro"></div>
+        <div class="etapas" id="etapas_cadastro"></div>
+      </section>
+
+      <!-- PAINEL: Fase 2 - Certificados e autenticação -->
+      <section id="painel_acessos" class="painel" aria-label="Certificados e autenticação">
+        <div class="secao_titulo">
+          <h2>2. Certificados e autenticação</h2>
+          <p>Etapas de suporte às procurações · condicionais</p>
+        </div>
+        <div class="filtros" data-filtros="acessos"></div>
+        <div class="resultado_busca" id="resultado_acessos"></div>
+        <div class="etapas" id="etapas_acessos"></div>
+      </section>
+
+      <!-- PAINEL: Fase 3 - Procurações -->
+      <section id="painel_procuracoes" class="painel" aria-label="Procurações">
+        <div class="secao_titulo">
+          <h2>3. Procurações e autorizações</h2>
+          <p>Prioridade operacional RFB → DET/FGTS → SEFAZ-DF → Conectividade Social</p>
+        </div>
+        <div class="filtros" data-filtros="procuracoes"></div>
+        <div class="resultado_busca" id="resultado_procuracoes"></div>
+        <div class="etapas" id="etapas_procuracoes"></div>
+      </section>
+
+      <!-- PAINEL: Fase 4 - Empregador Web -->
+      <section id="painel_empregador" class="painel" aria-label="Empregador Web">
+        <div class="secao_titulo">
+          <h2>4. Empregador Web</h2>
+          <p>Cadastro e procuração; resets são alternativas condicionais</p>
+        </div>
+        <div class="filtros" data-filtros="empregador"></div>
+        <div class="resultado_busca" id="resultado_empregador"></div>
+        <div class="etapas" id="etapas_empregador"></div>
+      </section>
+
+      <!-- PAINEL: Fase 5 - Conferência e acompanhamento -->
+      <section id="painel_conferencia" class="painel" aria-label="Conferência e acompanhamento">
+        <div class="secao_titulo">
+          <h2>5. Conferência e acompanhamento</h2>
+          <p>Pendências contínuas, critérios de conclusão e evidências</p>
+        </div>
+        <div class="filtros" data-filtros="conferencia"></div>
+        <div class="resultado_busca" id="resultado_conferencia"></div>
+        <div class="etapas" id="etapas_conferencia"></div>
+      </section>
+
+      <!-- PAINEL: Regras gerais e pendências de definição interna -->
+      <section id="painel_regras" class="painel" aria-label="Regras gerais e pendências">
+        <div class="secao_titulo">
+          <h2>Regras gerais e decisões pendentes</h2>
+          <p>Conflitos documentais apresentados sem solução arbitrária</p>
+        </div>
+        <div class="painel_texto">
+          <h2>Regras de trabalho extraídas do material</h2>
+          <ul>
+            <li><strong>Prazo:</strong> priorizar ações internas dentro de 24 horas a partir da Comunicação de Entrada.
+              A contagem em horas corridas ou úteis não foi definida.</li>
+            <li><strong>Ordem:</strong> RFB e DET/FGTS são priorizadas. Se a verificação gov.br bloquear, adiante
+              Agência Net/SEFAZ-DF e Conectividade, quando aplicáveis.</li>
+            <li><strong>Verificação gov.br:</strong> solicitar confirmação adicional somente se o portal exigir. Não
+              arquivar códigos, senhas ou códigos de recuperação.</li>
+            <li><strong>Procurações:</strong> conferir a existência de autorizações anteriores, os poderes concedidos e
+              validade. Nunca apagar ou substituir sem autorização.</li>
+            <li><strong>SEFAZ-DF:</strong> procedimento Agência Net aplica-se aos clientes do Distrito Federal; para
+              outras UFs não há passo a passo completo nos arquivos.</li>
+            <li><strong>Atividades:</strong> marcar “OK” somente depois de confirmar execução e evidência aplicável.
+              “Impedimento” não significa conclusão.</li>
+          </ul>
+        </div>
+        <div class="secao_titulo">
+          <h2>Pendências de definição interna</h2>
+          <p><span id="qtd_pendencias"></span> pontos mapeados</p>
+        </div>
+        <!-- Preenchido dinamicamente pelo JS com base em dados_operacionais.pendencias -->
+        <div id="lista_pendencias"></div>
+      </section>
+
+      <!-- PAINEL: Biblioteca Documental (POPs originais em PDF e transcrições por página) -->
+      <section id="painel_fontes" class="painel" aria-label="Biblioteca documental">
+        <div class="secao_titulo">
+          <h2>Biblioteca documental</h2>
+          <p>17 POPs originais e 1 rascunho · conteúdo integral</p>
+        </div>
+        <div class="painel_texto">
+          <p>Consulte o texto integral de cada POP, separado por página, ou abra o PDF original para visualizar a
+            diagramação, as imagens e os links do documento. A busca inclui todo o texto, inclusive endereço, telefone e
+            e-mail. Os títulos de seis PDFs foram ajustados na lista para identificar o assunto; os arquivos originais
+            foram preservados. O rascunho é um texto complementar enviado na conversa.</p>
+        </div>
+        <div class="filtros">
+          <label class="busca">
+            <span>⌕</span>
+            <input id="busca_fontes" type="search" placeholder="Buscar nome ou texto dos PDFs"
+              aria-label="Buscar na biblioteca documental">
+          </label>
+        </div>
+        <!-- Lista de documentos renderizada pelo JS em preencher_fontes() -->
+        <div id="lista_fontes"></div>
+      </section>
+
+      <!-- Rodapé informativo da página -->
+      <footer class="rodape">IZZI · Central de Processos · Base documental: PDFs dos POPs e esboço HTML · Esta central
+        tem fins informativos e não contém dados de clientes nem credenciais.</footer>
+    </main>
+  </div>
+  <!-- Base de dados operacionais e lógica da aplicação -->
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
 </html>
