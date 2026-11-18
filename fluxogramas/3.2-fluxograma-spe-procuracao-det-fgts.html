@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>IZZI | Fluxograma SPE: procuração DET/FGTS</title>
+    <link rel="stylesheet" href="../assets/css/fluxograma.css">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/izzi-guia.svg">
+  </head>
+  <body>
+    <main class="main">
+      <nav class="barra_topo" aria-label="Navegação do fluxograma">
+        <a class="btn_acao" href="../index.html#procuracao_det">← Voltar para a etapa 3.2 na Central</a>
+        <button type="button" class="btn_acao" onclick="window.print()">Imprimir / Salvar PDF</button>
+      </nav>
+      <header class="topo">
+        <div>
+          <span class="sobretitulo">Central de processos</span>
+          <h1>SPE: procuração DET/FGTS</h1>
+          <p>Criar e assinar a procuração trabalhista, incluindo os poderes previstos.</p>
+        </div>
+        <img class="marca" src="../assets/img/izzi-logo.png" alt="Izzi Inteligência Tributária">
+      </header>
+      <section class="cartao">
+        <div class="meta">
+          <span class="pill">3.2 · Procurações</span>
+          <span class="pill">SPE / gov.br / Assinador Serpro</span>
+        </div>
+        <h2 class="subtitulo">Fluxo principal</h2>
+        <div class="fluxo_container">
+          <div class="flow">
+            <div class="node start">
+              <span class="tag">Início</span>
+              <strong>Acessar o SPE</strong>
+              <p>Abra o Sistema de Procurações Eletrônicas e entre com o certificado digital do cliente.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Perfil</span>
+              <strong>Confirmar Meu Perfil</strong>
+              <p>Em “Definir Perfil”, selecione “Meu Perfil” e confirme.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Nova procuração</span>
+              <strong>Informar os dados da IZZI</strong>
+              <p>Clique em “Criar Procuração”, confira o e-mail do cliente e informe o CNPJ 30.182.037/0001-49 e o e-mail do DP.</p>
+            </div>
+          </div>
+          <div class="arrow_down" aria-hidden="true">
+            ↓
+          </div>
+          <div class="flow">
+            <div class="node ">
+              <span class="tag">Poderes</span>
+              <strong>Selecionar DET, FGTS e processo trabalhista</strong>
+              <p>Inclua os poderes autorizados. No FGTS Digital, confira Bloqueio e Estorno, Gestão do Histórico e Parcelamento.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Validade</span>
+              <strong>Definir a data final</strong>
+              <p>Use a regra de validade confirmada internamente. O PDF indica cinco anos; o rascunho menciona ajuste de um dia.</p>
+            </div>
+            <div class="arrow" aria-hidden="true">
+              →
+            </div>
+            <div class="node ">
+              <span class="tag">Assinatura</span>
+              <strong>Revisar e assinar</strong>
+              <p>Avance, revise os dados e assine com o certificado correto no Assinador Serpro.</p>
+            </div>
+          </div>
+          <div class="arrow_down" aria-hidden="true">
+            ↓
+          </div>
+          <div class="node end">
+            <span class="tag">Conclusão</span>
+            <strong>Baixar e conferir a procuração</strong>
+            <p>Confirme o cadastro no portal, baixe o documento, renomeie, arquive e atualize os controles.</p>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Se a assinatura não prosseguir</h2>
+        <div class="branch">
+          <div class="decision">
+            <strong>O Assinador Serpro apresenta erro de integração?</strong>
+            <p>Interrompa a assinatura e confira a configuração do assinador oficial.</p>
+          </div>
+          <div class="arrow" aria-hidden="true">
+            →
+          </div>
+          <div class="routes">
+            <div class="route warn">
+              <b>Aviso de conexão insegura</b>
+              <p>Não aceite a exceção local 127.0.0.1 sem validação técnica. O procedimento antigo contém essa instrução.</p>
+            </div>
+            <div class="route ok">
+              <b>Assinador autorizado</b>
+              <p>Volte ao SPE, conclua a assinatura e confirme o documento gerado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cartao">
+        <h2 class="subtitulo">Pontos de conferência</h2>
+        <div class="note">
+          <strong>Atenção:</strong>
+          Validade: cinco anos no PDF; cinco anos menos um dia no rascunho. Confirmar a regra antes de preencher.
+        </div>
+        <div class="note">
+          <strong>Atenção:</strong>
+          Poderes: conferir o escopo autorizado para o cliente e os três itens do FGTS Digital.
+        </div>
+      </section>
+      <div class="endbar">
+        Procuração assinada, conferida e salva, com status atualizado.
+      </div>
+      <footer class="foot">Material de consulta operacional da IZZI. Consulte a etapa 3.2 na Central de POPs para o procedimento detalhado e as fontes.</footer>
+    </main>
+  </body>
+</html>
