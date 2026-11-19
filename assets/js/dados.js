@@ -430,7 +430,6 @@ window.DADOS_OPERACIONAIS = {
         "Clicar em “Concluir” e “OK”; conferir que o certificado ficou disponível para a operação autorizada."
       ],
       "alertas": [
-        "O PDF de instalação tem somente uma observação genérica sobre sensibilidade do certificado; é preciso confirmar a política atual da IZZI para guarda de arquivos, senhas e instalação em equipamentos."
       ],
       "conclusao": "Instalação finalizada no ambiente autorizado e certificado disponível.",
       "dependencias": [
@@ -1219,24 +1218,12 @@ window.DADOS_OPERACIONAIS = {
   ],
   "pendencias": [
     {
-      "titulo": "Primeiro cadastro no Empregador Web",
-      "detalhe": "Fluxo de cadastro de gestor não possui telas e menus detalhados nos materiais; complementar com validação operacional."
+      "titulo": "Editar o tópico 1.4 — Notion",
+      "detalhe": "Revisar e editar o procedimento “Cadastrar o cliente na Base de Clientes do Notion”."
     },
     {
-      "titulo": "Divergências no reset do Empregador Web",
-      "detalhe": "O PDF mantido na biblioteca descreve atendimento por e-mail à Gerência de Seguro-Desemprego do DF e acompanhamento diário da caixa de entrada. A etapa 4.3 descreve o Portal do Cidadão com base no rascunho complementar. Confirmar internamente qual canal se aplica antes de solicitar o reset."
-    },
-    {
-      "titulo": "Empresa constituída pela própria IZZI",
-      "detalhe": "Rascunho contém observação incompleta; definir alterações na cobrança da contabilidade anterior e demais passos."
-    },
-    {
-      "titulo": "Documentos solicitados à contabilidade anterior",
-      "detalhe": "Conferir a versão vigente dos e-mails padrão de DP, Societário e Fiscal e a relação de documentos solicitados em cada modelo."
-    },
-    {
-      "titulo": "Conferência da aplicabilidade do Empregador Web",
-      "detalhe": "Rascunho usa funcionários como gatilho. O novo POP prevê validação interna antes de classificar como não aplicável."
+      "titulo": "Editar o tópico 5.2 — Conferir o onboarding e concluir o acompanhamento",
+      "detalhe": "Revisar e editar o passo a passo da conferência do onboarding e da conclusão do acompanhamento."
     }
   ]
 };
