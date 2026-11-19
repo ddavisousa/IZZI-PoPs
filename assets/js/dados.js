@@ -7,8 +7,8 @@ window.DADOS_OPERACIONAIS = {
   "metadados": {
     "titulo": "IZZI | Central de procedimentos",
     "versao": "Protótipo consolidado · revisão documental pendente",
-    "qtd_pdfs": 17,
-    "qtd_fontes": 18,
+    "qtd_pdfs": 16,
+    "qtd_fontes": 17,
     "qtd_etapas": 20,
     "aviso": "Ferramenta de consulta e simulação local; não registra clientes, não compartilha status e não substitui os sistemas oficiais."
   },
@@ -731,7 +731,6 @@ window.DADOS_OPERACIONAIS = {
       "resumo": "Solicitar a desabilitação do cadastro anterior e acompanhar o pedido em “Meus Pedidos”.",
       "sistema": "Portal do Cidadão / Dataprev",
       "fontes": [
-        "reset_dataprev",
         "rascunho_processo"
       ],
       "etiquetas": [
@@ -864,8 +863,8 @@ window.DADOS_OPERACIONAIS = {
   "fontes": [
     {
       "id": "dominio",
-      "titulo": "Cadastro de novos clientes na Domínio",
-      "arquivo": "- POP - Cadastro de novos clientes na dominio.pdf",
+      "titulo": "Davi-POP - Cadastro de Novos Clientes na Domínio",
+      "arquivo": "Davi-POP - Cadastro de Novos Clientes na Domínio.pdf",
       "categoria": "Cadastro",
       "paginas": [
         {
@@ -878,12 +877,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/dominio.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Cadastro%20de%20Novos%20Clientes%20na%20Dom%C3%ADnio.pdf"
     },
     {
       "id": "jornada",
-      "titulo": "Jornada do Cliente e Base Unificada",
-      "arquivo": "- POP - Jornada do Cliente e Base Unificada.pdf",
+      "titulo": "Davi-POP - Atualização da Jornada do Cliente e Base Unificada",
+      "arquivo": "Davi-POP - Atualização da Jornada do Cliente e Base Unificada.pdf",
       "categoria": "Cadastro",
       "paginas": [
         {
@@ -896,12 +895,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/jornada.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Atualiza%C3%A7%C3%A3o%20da%20Jornada%20do%20Cliente%20e%20Base%20Unificada.pdf"
     },
     {
       "id": "notion",
-      "titulo": "Cadastro na Base de Clientes do Notion",
-      "arquivo": "POP - Cadastro na Base de Clientes do Notion .pdf",
+      "titulo": "POP – Cadastro na Base de Clientes do Notion",
+      "arquivo": "POP – Cadastro na Base de Clientes do Notion.pdf",
       "categoria": "Cadastro",
       "paginas": [
         {
@@ -914,12 +913,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/notion.pdf"
+      "pdf_original": "documentos/pops/POP%20%E2%80%93%20Cadastro%20na%20Base%20de%20Clientes%20do%20Notion.pdf"
     },
     {
       "id": "whatsapp",
-      "titulo": "Criação de contatos e grupos no WhatsApp / Gestta Messenger",
-      "arquivo": "POP - Criação de Contatos e Grupos no WhatsApp (Gestta Messenger).pdf",
+      "titulo": "POP – Criação Contatos e Grupos no WhatsApp (Gestta Messenger)",
+      "arquivo": "POP – Criação Contatos e Grupos no WhatsApp (Gestta Messenger).pdf",
       "categoria": "Cadastro",
       "paginas": [
         {
@@ -932,12 +931,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/whatsapp.pdf"
+      "pdf_original": "documentos/pops/POP%20%E2%80%93%20Cria%C3%A7%C3%A3o%20Contatos%20e%20Grupos%20no%20WhatsApp%20(Gestta%20Messenger).pdf"
     },
     {
       "id": "documentos",
-      "titulo": "Solicitação de documentos e informações",
-      "arquivo": "R POP - Gestão de Pendências, Prazos e Impedimentos (6).pdf",
+      "titulo": "Davi-POP - Solicitação de Documentos e Informações do Novo Cliente",
+      "arquivo": "Davi-POP - Solicitação de Documentos e Informações do Novo Cliente.pdf",
       "categoria": "Cadastro",
       "paginas": [
         {
@@ -950,12 +949,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/documentos.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Solicita%C3%A7%C3%A3o%20de%20Documentos%20e%20Informa%C3%A7%C3%B5es%20do%20Novo%20Cliente.pdf"
     },
     {
       "id": "contabilidade",
-      "titulo": "Contato com a contabilidade anterior",
-      "arquivo": "R POP - Gestão de Pendências, Prazos e Impedimentos (5).pdf",
+      "titulo": "Davi-POP - Contato com a Contabilidade Anterior",
+      "arquivo": "Davi-POP - Contato com a Contabilidade Anterior.pdf",
       "categoria": "Cadastro",
       "paginas": [
         {
@@ -968,12 +967,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/contabilidade.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Contato%20com%20a%20Contabilidade%20Anterior.pdf"
     },
     {
       "id": "certificado",
-      "titulo": "Recebimento e controle de certificados digitais",
-      "arquivo": "R POP - Gestão de Pendências, Prazos e Impedimentos (4).pdf",
+      "titulo": "Davi-POP - Recebimento e Controle de Certificados Digitais",
+      "arquivo": "Davi-POP - Recebimento e Controle de Certificados Digitais.pdf",
       "categoria": "Acessos",
       "paginas": [
         {
@@ -986,12 +985,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/certificado.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Recebimento%20e%20Controle%20de%20Certificados%20Digitais.pdf"
     },
     {
       "id": "instalacao",
-      "titulo": "Instalação de certificado digital na máquina",
-      "arquivo": "POP - Instalação de Certificado Digital na Máquina.pdf",
+      "titulo": "Davi- POP - Instalação de Certificado Digital na Máquina",
+      "arquivo": "Davi- POP - Instalação de Certificado Digital na Máquina.pdf",
       "categoria": "Acessos",
       "paginas": [
         {
@@ -1000,12 +999,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 1,
-      "pdf_original": "documentos/pops/instalacao.pdf"
+      "pdf_original": "documentos/pops/Davi-%20POP%20-%20Instala%C3%A7%C3%A3o%20de%20Certificado%20Digital%20na%20M%C3%A1quina.pdf"
     },
     {
       "id": "gov",
-      "titulo": "Autenticação gov.br e verificação em duas etapas",
-      "arquivo": "R POP - Gestão de Pendências, Prazos e Impedimentos (3).pdf",
+      "titulo": "Davi- POP - Autenticação gov.br e Verificação em Duas Etapas",
+      "arquivo": "Davi- POP - Autenticação gov.br e Verificação em Duas Etapas.pdf",
       "categoria": "Acessos",
       "paginas": [
         {
@@ -1018,12 +1017,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/gov.pdf"
+      "pdf_original": "documentos/pops/Davi-%20POP%20-%20Autentica%C3%A7%C3%A3o%20gov.br%20e%20Verifica%C3%A7%C3%A3o%20em%20Duas%20Etapas.pdf"
     },
     {
       "id": "rfb",
-      "titulo": "Cadastro de procuração RFB/e-CAC",
-      "arquivo": "POP - Cadastro Procuração RFB (1).pdf",
+      "titulo": "POP - Cadastro de procuração RFB/e-CAC",
+      "arquivo": "POP - Cadastro de procuração RFB/e-CAC.pdf",
       "categoria": "Procurações",
       "paginas": [
         {
@@ -1036,12 +1035,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/rfb.pdf"
+      "pdf_original": "documentos/pops/POP%20-%20Cadastro%20de%20procura%C3%A7%C3%A3o%20RFB%20-%20e-CAC.pdf"
     },
     {
       "id": "det",
-      "titulo": "Cadastro de procuração DET/FGTS via SPE",
-      "arquivo": "POP - Cadastro Procuração DET.pdf",
+      "titulo": "POP - Criação de procuração DET/FGTS",
+      "arquivo": "POP - Criação de procuração DET/FGTS.pdf",
       "categoria": "Procurações",
       "paginas": [
         {
@@ -1058,12 +1057,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 3,
-      "pdf_original": "documentos/pops/det.pdf"
+      "pdf_original": "documentos/pops/POP%20-%20Cria%C3%A7%C3%A3o%20de%20procura%C3%A7%C3%A3o%20DET%20-%20FGTS.pdf"
     },
     {
       "id": "sefaz",
-      "titulo": "Cadastro de procuração Agência Net / SEFAZ-DF",
-      "arquivo": "POP - Cadastro Procuração Agência Net_SEFAZ.pdf",
+      "titulo": "POP - Cadastro de procuração Agência Net / SEFAZ-DF",
+      "arquivo": "POP - Cadastro de procuração Agência Net / SEFAZ-DF.pdf",
       "categoria": "Procurações",
       "paginas": [
         {
@@ -1084,7 +1083,7 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 4,
-      "pdf_original": "documentos/pops/sefaz.pdf",
+      "pdf_original": "documentos/pops/POP%20-%20Cadastro%20de%20procura%C3%A7%C3%A3o%20Ag%C3%AAncia%20Net%20-%20SEFAZ-DF.pdf",
       "dados_izzi": [
         [
           "CNPJ",
@@ -1130,8 +1129,8 @@ window.DADOS_OPERACIONAIS = {
     },
     {
       "id": "conectividade",
-      "titulo": "Cadastro de procuração Conectividade Social",
-      "arquivo": "POP - Cadastro Procuração Conectividade Social.pdf",
+      "titulo": "POP – Cadastro de Procuração Conectividade Social",
+      "arquivo": "POP – Cadastro de Procuração Conectividade Social.pdf",
       "categoria": "Procurações",
       "paginas": [
         {
@@ -1148,12 +1147,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 3,
-      "pdf_original": "documentos/pops/conectividade.pdf"
+      "pdf_original": "documentos/pops/POP%20%E2%80%93%20Cadastro%20de%20Procura%C3%A7%C3%A3o%20Conectividade%20Social.pdf"
     },
     {
       "id": "empregador",
-      "titulo": "Cadastro inicial e procuração Empregador Web",
-      "arquivo": "R POP - Gestão de Pendências, Prazos e Impedimentos (2).pdf",
+      "titulo": "Davi-POP - Cadastro inicial e procuração Empregador Web",
+      "arquivo": "Davi-POP - Cadastro inicial e procuração Empregador Web.pdf",
       "categoria": "Empregador Web",
       "paginas": [
         {
@@ -1166,12 +1165,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/empregador.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Cadastro%20inicial%20e%20procura%C3%A7%C3%A3o%20Empregador%20Web.pdf"
     },
     {
       "id": "reset_df",
-      "titulo": "Solicitação de reset Empregador Web — DF",
-      "arquivo": "POP - Reset Empregador Web DF.pdf",
+      "titulo": "POP - Solicitação de reset de acesso Empregador Web",
+      "arquivo": "POP - Solicitação de reset de acesso Empregador Web.pdf",
       "categoria": "Empregador Web",
       "paginas": [
         {
@@ -1184,30 +1183,12 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/reset_df.pdf"
-    },
-    {
-      "id": "reset_dataprev",
-      "titulo": "Solicitação de reset Empregador Web — Dataprev",
-      "arquivo": "POP - Reset Empregador Web.pdf",
-      "categoria": "Empregador Web",
-      "paginas": [
-        {
-          "numero": 1,
-          "texto": " \nPOP – PROCEDIMENTO OPERACIONAL PADRÃO \n \nPOP – Solicitação de reset de acesso Empregador Web \nObjetivo \nResetar acesso e criar um novo (quando nem o cliente e/ou a antiga contabilidade não \npossuir) \n \n1. Responsáveis \n• Analistas de CS \n• Assistentes de CS \n \n2. Ferramentas utilizadas \n• Contrato social \n• Documento do responsável legal do CNPJ (CNH ou RG) \n• Cartão CNPJ \n• Certificado digital válido \n \n3. Reset de Cadastro do Empregador Web \nGatilho: Garantir código de acesso quando acessar o site com o certificado. | \nDocumento pessoal do responsável do CNPJ. \n \n3.1: Garantir toda a documentação listada no item 2. \n3.2: Em janela de navegação anônima, acessar o site do Dataprev pelo link \nhttps://portalcidadao.dataprev.gov.br/#/trabalho \n3.3: Na opção, “Seguro-Desemprego”, clicar em “Empregador Web – Atendimento à \ndistância” e depois “Avançar”. \n3.4: Depois, faça o login com o certificado digital da empresa. \n3.5: Preencha em “Dados Adicionais”:  \n• Você é procurador? “Não”  \n• Para qual serviço você deseja atendimento? “Desabilitar cadastro de empresa” \n• Em “Declaro que estou ciente que o cadastro da empresa será desabilitado e a \nempresa não poderá reutilizar o usuário e o e-mail cadastrados anteriormente.” \nPreencha com “Declaro verdadeira a presente DECLARAÇÃO, para os devidos \nfins de direito.” "
-        },
-        {
-          "numero": 2,
-          "texto": "• E preencha o “Número de inscrição do empregador” com o CNPJ da empresa. \n3.6: Em Anexos, faça o upload do contrato social e do documento do responsável nos \nseus respectivos lugares e “Avançar” \n3.7: Selecione a UF do estado do CNPJ e o município. E escolha qualquer unidade. \n3.8: Após isso, assinale a opção de “Declaro que li e concordo com as informações \nacima.” E concluir. \n3.9: A solicitação será analisada e teremos que acompanhar o processo de reset \natravés do https://portalcidadao.dataprev.gov.br/#/trabalho \n3.10: Na opção, “Seguro-Desemprego”, clicar em “Empregador Web – Atendimento à \ndistância” e depois “Avançar”. \n3.11: Depois, faça o login com o certificado digital da empresa. \n3.12: E acompanhe em “Meus Pedidos” a solicitação feita. \n \n4. Regras e observações \n• Após a solicitação feita, deve-se acompanhar semanalmente o procedimento \nde reset em “Meus Pedidos” no site. \n• Após o procedimento concluído, faça o cadastro de um novo gestor no site do \nEmpregador Web e salve as informações na pasta do cliente, conforme o POP \nde Cadastro Empregador Web. \n \n \n "
-        }
-      ],
-      "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/reset_dataprev.pdf"
+      "pdf_original": "documentos/pops/POP%20-%20Solicita%C3%A7%C3%A3o%20de%20reset%20de%20acesso%20Empregador%20Web.pdf"
     },
     {
       "id": "pendencias",
-      "titulo": "Gestão de pendências, prazos e impedimentos",
-      "arquivo": "R POP - Gestão de Pendências, Prazos e Impedimentos (1).pdf",
+      "titulo": "Davi-POP - Gestão de pendências, prazos e impedimentos",
+      "arquivo": "Davi-POP - Gestão de pendências, prazos e impedimentos.pdf",
       "categoria": "Conferência",
       "paginas": [
         {
@@ -1220,7 +1201,7 @@ window.DADOS_OPERACIONAIS = {
         }
       ],
       "quantidade_paginas": 2,
-      "pdf_original": "documentos/pops/pendencias.pdf"
+      "pdf_original": "documentos/pops/Davi-POP%20-%20Gest%C3%A3o%20de%20pend%C3%AAncias%2C%20prazos%20e%20impedimentos.pdf"
     },
     {
       "id": "rascunho_processo",
@@ -1243,7 +1224,7 @@ window.DADOS_OPERACIONAIS = {
     },
     {
       "titulo": "Divergências no reset do Empregador Web",
-      "detalhe": "O fluxo operacional informado usa o Portal do Cidadão: “Você é procurador? Sim”, CRC da Ana, procuração da IZZI e conferência do pedido no mesmo dia. O POP Dataprev transcrito indica “Não” e acompanhamento semanal. O POP GSD/DF permanece apenas na biblioteca documental como outra rota histórica; confirmar se ainda se aplica."
+      "detalhe": "O PDF mantido na biblioteca descreve atendimento por e-mail à Gerência de Seguro-Desemprego do DF e acompanhamento diário da caixa de entrada. A etapa 4.3 descreve o Portal do Cidadão com base no rascunho complementar. Confirmar internamente qual canal se aplica antes de solicitar o reset."
     },
     {
       "titulo": "Empresa constituída pela própria IZZI",

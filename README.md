@@ -14,7 +14,7 @@ Projeto de páginas HTML para consulta interativa de Procedimentos Operacionais 
 - `assets/js/dados.js` — base de dados das etapas, fontes documentais, pendências e fluxogramas.
 - `assets/js/app.js` — lógica de renderização, filtros, busca e ações da interface.
 - `assets/img/` — logotipo (`izzi-logo.png`) e ícone (`izzi-guia.svg`).
-- `documentos/pops/` — os 17 PDFs originais dos POPs.
+- `documentos/pops/` — os 16 PDFs dos POPs, com nomes sincronizados com a biblioteca documental.
 
 Abra o `index.html` diretamente no navegador. O projeto é estático e não requer instalação.
 
