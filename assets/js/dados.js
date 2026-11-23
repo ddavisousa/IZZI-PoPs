@@ -20,6 +20,7 @@ window.DADOS_OPERACIONAIS = {
       "grupo": "cadastro",
       "resumo": "Conferir a Comunicação de Entrada, os dados do CNPJ e as competências para iniciar o acompanhamento.",
       "sistema": "Slack / Consultar CNPJ",
+      "url_documentada": "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/",
       "fontes": [
         "dominio",
         "jornada",
@@ -32,16 +33,22 @@ window.DADOS_OPERACIONAIS = {
       ],
       "objetivo": "Iniciar a entrada do cliente e conferir seus dados cadastrais e competências.",
       "pre": [
-        "Acesso ao canal “processos de novos clientes” do Slack."
+        "Acesso ao Slack.",
+        "Acesso ao canal “processos de novos clientes” no Slack.",
       ],
       "passos": [
-        "Abrir o canal “processos de novos clientes” no Slack e localizar a Comunicação de Entrada da empresa.",
-        "Reunir a razão social ou nome, o CNPJ e as demais informações enviadas.",
-        "Acessar a ferramenta interna “Consultar CNPJ” e pesquisar pelo CNPJ do cliente.",
-        "Conferir a identificação e os dados cadastrais da empresa, comparando-os com a Comunicação de Entrada.",
-        "Identificar a data de competência da empresa e a competência de início dos serviços da IZZI.",
-        "Se houver informações ausentes ou divergentes, registrá-las e solicitar confirmação ao responsável.",
-        "Identificar as atividades iniciais que precisam constar na Jornada do Cliente e na Base Unificada."
+        "No Slack, abrir o canal “processos de novos clientes”.",
+        "Localizar a Comunicação de Entrada da empresa.",
+        "Reunir a razão social, o CNPJ e as demais informações enviadas.",
+        "Acessar o site “Consultar CNPJ”.",
+        "Emitir o cartão CNPJ com o CNPJ do cliente.",
+        "Conferir a identificação e os dados cadastrais da empresa.",
+        "Comparar a razão social e o CNPJ com a Comunicação de Entrada.",
+        "Identificar a data cadastral da empresa (cartão CNPJ).",
+        "Identificar a competência de início dos serviços da IZZI (Slack).",
+        "Se houver informações ausentes ou divergentes, registrá-las e solicitar confirmação ao responsável, Matheus.",
+        "Identificar se o certificado digital foi enviado na Comunicação de Entrada (Slack).",
+        "Caso o certificado digital tenha sido enviado, registrar na “Jornada do Cliente” como “OK”."
       ],
       "conclusao": "Comunicação de Entrada e dados do CNPJ conferidos; competências identificadas e divergências encaminhadas para confirmação.",
       "registros": "Comunicação de Entrada, Jornada do Cliente e Base Unificada.",

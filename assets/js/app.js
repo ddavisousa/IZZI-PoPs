@@ -6,7 +6,7 @@
 const capa = document.getElementById('capa');
 capa.showModal();
 capa.addEventListener('cancel', event => event.preventDefault());
-  
+
 
 'use strict';
 // Central de consulta inteiramente local. Nenhuma informação é transmitida ou salva.
@@ -82,14 +82,14 @@ function renderizar_campo(titulo, itens) {
 
   const conteudo = titulo === 'Pré-requisitos'
     ? `<ul>${itens.map(texto => `<li>${escapar_html(texto)
-        .replace(
-          /30\.182\.037\/0001-49\.?/,
-          '30.182.037/0001-49. <button class="copiar_cnpj" type="button" data-copiar-cnpj aria-label="Copiar CNPJ da IZZI" title="Copiar CNPJ da IZZI"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>'
-        )
-        .replace(
-          /dp@izzicontabil\.com\.br\.?/,
-          'dp@izzicontabil.com.br. <button class="copiar_cnpj" type="button" data-copiar-cnpj data-copiar-email aria-label="Copiar e-mail do DP" title="Copiar e-mail do DP"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>'
-        )
+      .replace(
+        /30\.182\.037\/0001-49\.?/,
+        '30.182.037/0001-49. <button class="copiar_cnpj" type="button" data-copiar-cnpj aria-label="Copiar CNPJ da IZZI" title="Copiar CNPJ da IZZI"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>'
+      )
+      .replace(
+        /dp@izzicontabil\.com\.br\.?/,
+        'dp@izzicontabil.com.br. <button class="copiar_cnpj" type="button" data-copiar-cnpj data-copiar-email aria-label="Copiar e-mail do DP" title="Copiar e-mail do DP"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>'
+      )
       }</li>`).join('')}</ul>`
     : lista_linhas(itens);
 
@@ -214,7 +214,7 @@ function renderizar_etapa(etapa) {
     + `</div>`
     + `<div>`
     + `<div class="campo"><span class="rotulo">Sistema ou ferramenta</span><p>${escapar_html(etapa.sistema)}</p>${etapa.url_documentada
-      ? `<p style="margin-top:8px"><a href="${escapar_html(etapa.url_documentada)}" target="_blank" rel="noopener noreferrer">Abrir endereço citado no PDF ↗</a><br><small style="color:var(--muted)">Link do documento, não verificado externamente</small></p>`
+      ? `<p style="margin-top:8px"><a href="${escapar_html(etapa.url_documentada)}" target="_blank" rel="noopener noreferrer">Consultar CNPJ ↗</a><br><small style="color:var(--muted)">Link do documento, não verificado externamente</small></p>`
       : ''
     }</div>`
     + `<div class="campo"><span class="rotulo">Identificação operacional</span><p>${escapar_html(etapa.numero)} · ${escapar_html(nomes_grupos[etapa.grupo])}</p></div>`
@@ -672,4 +672,4 @@ indexarCentral();
 pesquisarCentral();
 document.getElementById('incluir_biblioteca').addEventListener('change', pesquisarCentral);
 document.getElementById('consulta_geral').addEventListener('input', pesquisarCentral);
-  
+
