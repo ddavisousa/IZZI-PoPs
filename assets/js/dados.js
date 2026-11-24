@@ -9,7 +9,7 @@ window.DADOS_OPERACIONAIS = {
     "versao": "Protótipo consolidado · revisão documental pendente",
     "qtd_pdfs": 16,
     "qtd_fontes": 17,
-    "qtd_etapas": 20,
+    "qtd_etapas": 21,
     "aviso": "Ferramenta de consulta e simulação local; não registra clientes, não compartilha status e não substitui os sistemas oficiais."
   },
   "etapas": [
@@ -21,6 +21,7 @@ window.DADOS_OPERACIONAIS = {
       "resumo": "Conferir a Comunicação de Entrada, os dados do CNPJ e as competências para iniciar o acompanhamento.",
       "sistema": "Slack / Consultar CNPJ",
       "url_documentada": "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/",
+      "rotulo_link": "Consultar CNPJ",
       "fontes": [
         "dominio",
         "jornada",
@@ -77,8 +78,9 @@ window.DADOS_OPERACIONAIS = {
         "Abrir o sistema Domínio no navegador.",
         "Na barra superior, selecionar “Controle” e depois “Empresas”.",
         "Na barra inferior, clicar em “Novo”.",
-        "Informar o CNPJ da empresa e realizar a autorização RFB solicitada pelo sistema.",
-        "Identificar a empresa no formato “(código) | Nome da empresa”, utilizando o código atribuído no Domínio.",
+        "Informar o CNPJ da empresa.",
+        "Realizar a autorização RFB solicitada pelo sistema.",
+        "Incluir o apelido da empresa no formato “(código dominio) | Nome da empresa”.",
         "Inserir o início das atividades da empresa (consultar no cartão CNPJ) e a primeira competência com a IZZI.",
         "Gravar o cadastro e acessar “Registro Contábil”.",
         "Marcar “Folha”, “Escrita Fiscal”, “Contabilidade” e “Registro”.",
@@ -98,12 +100,14 @@ window.DADOS_OPERACIONAIS = {
       ]
     },
     {
-      "id": "jornada_base",
+      "id": "Base_unificada",
       "numero": "1.3",
-      "titulo": "Atualizar a Base Unificada e a Jornada do Cliente",
+      "titulo": "Atualizar a Base Unificada",
       "grupo": "cadastro",
-      "resumo": "Registrar o cliente na Base Unificada e atualizar as informações nas abas Fiscal, Departamento Pessoal (DP) e Paralegal da Jornada do Cliente.",
-      "sistema": "Planilhas",
+      "resumo": "Registrar a empresa do cliente na Base Unificada.",
+      "sistema": "Excel",
+      "url_documentada": "https://docs.google.com/spreadsheets/d/19KZ_H3CKdOJVGUVcghOfvUNxVqjpV-FKZaGlEym_Es0/edit?gid=1340913697#gid=1340913697",
+      "rotulo_link": "Abrir Base Unificada",
       "fontes": [
         "jornada",
         "dominio"
@@ -117,14 +121,23 @@ window.DADOS_OPERACIONAIS = {
         "Informações da Comunicação de Entrada e consulta do CNPJ."
       ],
       "passos": [
-        "Abrir a planilha Base Unificada e incluir um novo registro com o código gerado na Domínio.",
-        "Informar os dados conferidos na Base Unificada, como CNPJ, razão social e grupo. Marcar Viviane como responsável pelo atendimento e conferir se o escopo do serviço é completo ou somente fiscal.",
-        "Abrir a planilha Jornada do Cliente e incluir um novo registro com o código gerado na Domínio.",
-        "Atualizar as informações disponíveis, registrar as pendências na Jornada do Cliente e preencher as abas Fiscal, Departamento Pessoal (DP) e Paralegal.",
-        "Nas pendências, preencher somente os campos com informações confirmadas, sem presumir dados desconhecidos."
+        "Abrir a planilha Base Unificada.",
+        "Adicionar uma nova linha e informar o código da empresa na Domínio.",
+        "Preencher a data de competência do cliente.",
+        "Selecionar a origem do cliente conforme o caso, “Constituído na IZZI” ou “Transição”.",
+        "Definir o status do cliente como “Em processo de entrada”.",
+        "Preencher a razão social do cliente.",
+        "Conferir a informação de gestão de clientes no Slack e preencher o campo correspondente.",
+        "Preencher o CNPJ do cliente.",
+        "Informar o estado (UF) do cliente.",
+        "Informar o nome do grupo do cliente no Messenger.",
+        "Conferir o escopo contratado e indicar se o serviço é completo (Fiscal, Contábil e DP) ou somente fiscal.",
+        "Selecionar Viviane como responsável pelo atendimento.",
+        "Manter em branco os demais campos da planilha.",
+        "Conferir se todos os campos previstos nesta etapa estão preenchidos."
       ],
-      "conclusao": "Cliente registrado na Base Unificada e nas abas Fiscal, Departamento Pessoal (DP) e Paralegal da Jornada do Cliente, com as pendências registradas.",
-      "registros": "Base Unificada e Jornada do Cliente.",
+      "conclusao": "Cliente registrado na Base Unificada, com todos os campos previstos nesta etapa preenchidos e conferidos.",
+      "registros": "Base Unificada.",
       "dependencias": [
         "cadastro_dominio"
       ],
@@ -134,12 +147,47 @@ window.DADOS_OPERACIONAIS = {
       ]
     },
     {
-      "id": "notion_cadastro",
+      "id": "Jornada_cliente",
       "numero": "1.4",
+      "titulo": "Jornada do Cliente",
+      "grupo": "cadastro",
+      "resumo": "Registrar a empresa do cliente na planilha Jornada do Cliente.",
+      "sistema": "Excel",
+      "url_documentada": "https://docs.google.com/spreadsheets/d/1KMxZFf1_-9XlrlqkrfpdtUa1mBCD176PrAWW_HPkaSQ/edit?gid=0#gid=0&fvid=991239513",
+      "rotulo_link": "Abrir Jornada do Cliente",
+      "fontes": [
+        "jornada",
+        "dominio"
+      ],
+      "etiquetas": [
+        "Obrigatória"
+      ],
+      "pre": [
+        "Cartão CNPJ disponível.",
+        "Comunicação de Entrada disponível no canal “processos de novos clientes” do Slack."
+      ],
+      "passos": [
+        "Abrir a planilha Jornada do Cliente.",
+        "Adicionar uma nova linha e informar o código da empresa na Domínio.",
+        "Preencher a data de competência do cliente.",
+        "Selecionar a origem do cliente conforme o caso, “Constituído na IZZI” ou “Transição”.",
+        "Preencher a razão social do cliente.",
+        "Conferir a informação de gestão de clientes no Slack e preencher o campo correspondente.",
+        "Preencher o CNPJ do cliente.",
+        "Marcar os demais campos como “Pendente”.",
+        "Consultar o Slack e verificar se o certificado digital do cliente já foi recebido.",
+        "Se o recebimento estiver confirmado, marcar o campo “Certificado Digital” como “OK”.",
+        "Conferir se todos os campos previstos nesta etapa estão preenchidos."
+      ]
+    },
+    {
+      "id": "notion_cadastro",
+      "numero": "1.5",
       "titulo": "Cadastrar o cliente na Base de Clientes do Notion",
       "grupo": "cadastro",
-      "resumo": "Preencher as propriedades do cliente e as informações contratuais e operacionais.",
+      "resumo": "Cadastrar o cliente no Notion e preencher os dados cadastrais, contratuais e operacionais.",
       "sistema": "Notion",
+      "rotulo_link": "Abrir Notion",
       "fontes": [
         "notion",
         "jornada"
@@ -148,38 +196,42 @@ window.DADOS_OPERACIONAIS = {
         "Obrigatória"
       ],
       "pre": [
-        "Cartão CNPJ e Comunicação de Entrada.",
-        "Código de identificação da Domínio.",
+        "Cartão CNPJ e Comunicação de Entrada disponíveis para consulta.",
+        "Código da empresa na Domínio disponível.",
         "Acesso autorizado à Base de Clientes do Notion."
       ],
       "passos": [
-        "Abrir a Base de Clientes no Notion e clicar em “Nova”.",
-        "Em “Nova página”, inserir o código Domínio.",
-        "Preencher “Status do Cliente” com a situação real: Em Processo de Entrada, Onboarding, Ativo etc.",
-        "Relacionar o cliente à propriedade “Gestão de Clientes”, criando o grupo quando necessário.",
-        "Preencher Nome Fantasia, Razão Social e CNPJ conforme Cartão CNPJ.",
-        "Informar “Nome do Grupo WhatsApp”, diferenciando grupos de DP/Fiscal quando houver.",
-        "Preencher “1 Competência IZZI” e “Entrada | Definição Competência” (confirmada ou a confirmar).",
-        "Em “Entrada | Origem”, registrar Transição de Contabilidade ou Criado pela IZZI, conforme aplicável.",
-        "Preencher “Fiscal | Regime Tributário”, “Fiscal | Regime” (optante ou não pelo Simples Nacional), Setor, e-mail principal e Recebimento 1º Honorário.",
-        "Marcar somente checkboxes de demandas efetivamente realizadas.",
-        "Informar status do Certificado Digital, Estado (UF) e Serviços IZZI.",
-        "Conferir os campos e acionar Comercial/Paralegal/cliente para dados faltantes."
+        "Abrir o Notion.",
+        "Na barra lateral, acessar “Gestão de Cliente”.",
+        "Clicar em “Novo”.",
+        "Em “Nome do Grupo”, informar o nome da empresa do cliente.",
+        "Em “Jornada do Cliente”, selecionar “Entrada”.",
+        "Consultar a classificação do cliente no Slack e informar no campo correspondente.",
+        "Fechar a aba de cadastro do grupo.",
+        "Na barra lateral, acessar “Base de Clientes”.",
+        "Clicar em “Nova” para cadastrar o cliente.",
+        "Informar o código (Dominio) da empresa.",
+        "Em “Gestão de cliente”, selecionar o cliente que está sendo cadastrado.",
+        "Informar o nome fantasia do cliente.",
+        "Informar a razão social do cliente.",
+        "Informar o CNPJ do cliente.",
+        "Informar o setor do cliente.",
+        "Conferir se todos os campos previstos nesta etapa estão preenchidos."
       ],
       "alertas": [],
-      "conclusao": "Cadastro inicial no Notion com informações confirmadas e lacunas encaminhadas.",
+      "conclusao": "Cadastro inicial salvo no Notion, com os dados confirmados preenchidos e as informações faltantes solicitadas aos responsáveis.",
       "registros": "Base de Clientes do Notion.",
       "dependencias": [
         "cadastro_dominio"
       ],
       "paralelo": [
-        "jornada_base"
+        "Base_unificada"
       ],
       "url_documentada": "https://www.notion.so/28ed1606ba584aba9f3c253a0c4c683d?v=02252bd90e244d669c03fbde4fa14225"
     },
     {
       "id": "whatsapp_grupo",
-      "numero": "1.5",
+      "numero": "1.6",
       "titulo": "Cadastrar contatos e criar o grupo no Gestta/Messenger",
       "grupo": "cadastro",
       "resumo": "Cadastrar o cliente, criar o grupo e conferir seus participantes.",
@@ -194,15 +246,16 @@ window.DADOS_OPERACIONAIS = {
       ],
       "pre": [
         "Nome e telefone do cliente recebidos na Comunicação de Entrada.",
-        "Nome do grupo enviado pelo Nassif no Slack."
+        "Nome do grupo enviado pelo comercial no Slack."
       ],
       "passos": [
-        "Acessar o Gestta e abrir o Messenger.",
-        "Cadastrar o contato do cliente, conferindo o nome e o número de telefone. Usar o padrão NOME DO CLIENTE - NOME DA EMPRESA.",
+        "Acessar o Gestta.",
+        "No canto superior esquerdo abrir o Messenger.",
+        "Cadastrar o contato do cliente, conferindo o nome e o número de telefone. Usar o padrão “Nome do Cliente - Nome da Empresa”.",
         "Solicitar ao cliente que salve o contato da IZZI para permitir a criação do grupo.",
-        "Criar o grupo no Messenger com o nome enviado pelo Nassif no Slack.",
-        "Adicionar Samuel, Ana Paula, Matheus, Phelipe, Rafaela, Tharciso e o cliente ao grupo.",
-        "Usar o celular da IZZI para adicionar a foto do grupo.",
+        "Criar o grupo no Messenger com o nome enviado pelo comercial no Slack. (processos de novos clientes)",
+        "Adicionar Samuel, Ana Paula, Matheus, Phelipe, Rafaela, Tharciso e o(s) cliente(s) ao(s) grupo(s).",
+        "Usar o celular da IZZI para adicionar a foto do(s) grupo(s).",
         "Conferir as informações e os participantes antes de iniciar a comunicação."
       ],
       "decisoes": [],
@@ -210,17 +263,17 @@ window.DADOS_OPERACIONAIS = {
       "conclusao": "Contato cadastrado e grupo criado com nome, foto e participantes conferidos.",
       "registros": "Gestta Messenger; nome do grupo na Base de Clientes do Notion.",
       "dependencias": [
-        "jornada_base"
+        "Base_unificada"
       ],
       "paralelo": [],
       "url_documentada": "https://onvio.com.br/login/#/"
     },
     {
       "id": "solicitar_documentos",
-      "numero": "1.6",
-      "titulo": "Conduzir a comunicação no grupo, solicitar documentos e agendar a reunião",
+      "numero": "1.7",
+      "titulo": "Conduzir a comunicação no grupo com o cliente",
       "grupo": "cadastro",
-      "resumo": "Apresentar o grupo, solicitar documentos, contatar a contabilidade atual e agendar a reunião.",
+      "resumo": "Apresentar o grupo, solicitar documentos, contatar a contabilidade atual e agendar reunião.",
       "sistema": "Gestta Messenger / WhatsApp",
       "fontes": [
         "documentos",
@@ -234,10 +287,18 @@ window.DADOS_OPERACIONAIS = {
         "Grupo criado com o cliente e os colaboradores da IZZI."
       ],
       "passos": [
-        "Informar aos clientes o objetivo do grupo e perguntar se desejam incluir mais alguém. Adicionar as pessoas indicadas pelo cliente.",
-        "Após a resposta do cliente, solicitar o Contrato Social, o telefone e o e-mail da contabilidade atual do cliente, as três últimas folhas de pagamento, as fichas de registro dos funcionários e o login do Empregador Web.",
-        "Ao receber o contato da contabilidade atual do cliente, enviar uma mensagem solicitando um endereço de e-mail para encaminhar as solicitações.",
-        "Agendar a reunião de onboarding com o cliente."
+        "Informar aos clientes o objetivo do grupo.",
+        "Perguntar se desejam incluir mais alguém ao grupo.",
+        "Adicionar as pessoas indicadas pelo cliente.",
+        "Após a resposta do cliente, solicitar;",
+        "Contrato Social.",
+        "Telefone e e-mail da contabilidade atual do cliente.",
+        "Três últimas folhas de pagamento.",
+        "Fichas de registro dos funcionários.",
+        "Login do Empregador Web.",
+        "Ao receber o contato da contabilidade atual do cliente, enviar uma mensagem para contabilidade solicitando um endereço de e-mail deles.",
+        "Solicitar a atual contabilidade do cliente os documentos por e-mail.",
+        "Agendar a reunião de onboarding com o cliente.",
       ],
       "alertas": [],
       "decisoes": [],
@@ -249,44 +310,6 @@ window.DADOS_OPERACIONAIS = {
       "paralelo": [
         "contabilidade_anterior",
         "certificado_conferencia"
-      ]
-    },
-    {
-      "id": "contabilidade_anterior",
-      "numero": "1.7",
-      "titulo": "Enviar solicitação à contabilidade anterior",
-      "grupo": "cadastro",
-      "resumo": "Enviar os e-mails padrão à contabilidade anterior conforme o escopo dos serviços do cliente.",
-      "sistema": "E-mail corporativo",
-      "fontes": [
-        "contabilidade",
-        "documentos"
-      ],
-      "etiquetas": [
-        "Cliente / terceiro",
-        "Alta prioridade"
-      ],
-      "pre": [
-        "E-mail da contabilidade anterior confirmado pelo cliente.",
-        "Razão social e CNPJ da empresa cliente."
-      ],
-      "passos": [
-        "Confirmar o endereço de e-mail da contabilidade anterior e verificar se o escopo dos serviços do cliente é completo ou somente fiscal.",
-        "Selecionar os e-mails padrão conforme o escopo: para escopo completo, DP, Societário e Fiscal; para escopo somente fiscal, Societário e Fiscal.",
-        "Conferir cada e-mail por completo antes de enviar, incluindo destinatário, assunto, conteúdo e anexos.",
-        "Enviar à contabilidade anterior os e-mails padrão selecionados e conferidos."
-      ],
-      "alertas": [
-        "Não aguardar resposta da antiga contabilidade para iniciar atividades independentes."
-      ],
-      "conclusao": "E-mails padrão enviados conforme o escopo do cliente, após conferência integral; respostas e pendências acompanhadas.",
-      "registros": "E-mail corporativo, pasta do cliente, tarefas e controles.",
-      "dependencias": [
-        "solicitar_documentos"
-      ],
-      "paralelo": [
-        "certificado_conferencia",
-        "whatsapp_grupo"
       ]
     },
     {
@@ -328,8 +351,46 @@ window.DADOS_OPERACIONAIS = {
       ]
     },
     {
-      "id": "concluir_cadastro_dominio",
+      "id": "contabilidade_anterior",
       "numero": "1.9",
+      "titulo": "Enviar solicitação à contabilidade anterior",
+      "grupo": "cadastro",
+      "resumo": "Enviar os e-mails padrão à contabilidade anterior conforme o escopo dos serviços do cliente.",
+      "sistema": "E-mail corporativo",
+      "fontes": [
+        "contabilidade",
+        "documentos"
+      ],
+      "etiquetas": [
+        "Cliente / terceiro",
+        "Alta prioridade"
+      ],
+      "pre": [
+        "E-mail da contabilidade anterior confirmado pelo cliente.",
+        "Razão social e CNPJ da empresa cliente."
+      ],
+      "passos": [
+        "Confirmar o endereço de e-mail da contabilidade anterior e verificar se o escopo dos serviços do cliente é completo ou somente fiscal.",
+        "Selecionar os e-mails padrão conforme o escopo: para escopo completo, DP, Societário e Fiscal; para escopo somente fiscal, Societário e Fiscal.",
+        "Conferir cada e-mail por completo antes de enviar, incluindo destinatário, assunto, conteúdo e anexos.",
+        "Enviar à contabilidade anterior os e-mails padrão selecionados e conferidos."
+      ],
+      "alertas": [
+        "Não aguardar resposta da antiga contabilidade para iniciar atividades independentes."
+      ],
+      "conclusao": "E-mails padrão enviados conforme o escopo do cliente, após conferência integral; respostas e pendências acompanhadas.",
+      "registros": "E-mail corporativo, pasta do cliente, tarefas e controles.",
+      "dependencias": [
+        "solicitar_documentos"
+      ],
+      "paralelo": [
+        "certificado_conferencia",
+        "whatsapp_grupo"
+      ]
+    },
+    {
+      "id": "concluir_cadastro_dominio",
+      "numero": "1.10",
       "titulo": "Concluir cadastro na Domínio",
       "grupo": "cadastro",
       "resumo": "Cadastrar os sócios, informar o responsável legal e concluir o quadro societário conforme o contrato social.",
@@ -819,7 +880,7 @@ window.DADOS_OPERACIONAIS = {
       "dependencias": [],
       "paralelo": [
         "entrada_slack",
-        "jornada_base",
+        "Base_unificada",
         "solicitar_documentos",
         "procuracao_rfb"
       ]
@@ -858,7 +919,7 @@ window.DADOS_OPERACIONAIS = {
       "conclusao": "Processo conferido e apto a encerramento, ou pendências mantidas abertas com responsável e motivo.",
       "registros": "Jornada do Cliente, Base Unificada, Notion e tarefas internas.",
       "dependencias": [
-        "jornada_base",
+        "Base_unificada",
         "notion_cadastro",
         "solicitar_documentos",
         "certificado_conferencia"
@@ -1125,7 +1186,7 @@ window.DADOS_OPERACIONAIS = {
         ],
         [
           "Telefone",
-          "61 98551-7792"
+          "61 8551-7792"
         ],
         [
           "E-mail",
@@ -1225,7 +1286,7 @@ window.DADOS_OPERACIONAIS = {
   ],
   "pendencias": [
     {
-      "titulo": "Editar o tópico 1.4 — Notion",
+      "titulo": "Editar o tópico 1.5 — Notion",
       "detalhe": "Revisar e editar o procedimento “Cadastrar o cliente na Base de Clientes do Notion”."
     },
     {

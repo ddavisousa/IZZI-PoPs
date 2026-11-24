@@ -214,7 +214,7 @@ function renderizar_etapa(etapa) {
     + `</div>`
     + `<div>`
     + `<div class="campo"><span class="rotulo">Sistema ou ferramenta</span><p>${escapar_html(etapa.sistema)}</p>${etapa.url_documentada
-      ? `<p style="margin-top:8px"><a href="${escapar_html(etapa.url_documentada)}" target="_blank" rel="noopener noreferrer">Consultar CNPJ ↗</a><br><small style="color:var(--muted)">Link do documento, não verificado externamente</small></p>`
+      ? `<p style="margin-top:8px"><a href="${escapar_html(etapa.url_documentada)}" target="_blank" rel="noopener noreferrer">${escapar_html(etapa.rotulo_link || 'Acessar')} ↗</a><br><small style="color:var(--muted)"></small></p>`
       : ''
     }</div>`
     + `<div class="campo"><span class="rotulo">Identificação operacional</span><p>${escapar_html(etapa.numero)} · ${escapar_html(nomes_grupos[etapa.grupo])}</p></div>`
