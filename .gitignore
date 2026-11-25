@@ -1,6 +1,7 @@
 # Documentos pessoais e arquivos locais
 *.pdf
 !documentos/pops/*.pdf
+!documentos/templates/*.pdf
 *.doc
 *.docx
 *.xls
