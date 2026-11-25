@@ -334,7 +334,13 @@ Poderia, por gentileza, nos informar o melhor e-mail para enviarmos essa solicit
           "pdf": "documentos/templates/antiga-contabilidade.pdf",
           "rotulo_pdf": "Template do e-mail"
         },
-        "Agendar a reunião de onboarding com o cliente.",
+        {
+          "instrucao": "Agendar a reunião de onboarding com o cliente.",
+          "mensagem": `Nosso próximo passo é agendarmos nossa reunião de onboarding, momento em que faremos a integração entre nossas empresas, (nome da empresa do cliente) e IZZI. Essa reunião é virtual, tem duração aproximada de 1h, abordará os principais pontos da nossa parceria e os próximos passos.
+
+Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
+(horário).`
+        },
       ],
       "alertas": [],
       "decisoes": [],

@@ -166,7 +166,7 @@ function renderizar_passo(passo) {
   const mensagem = passo.mensagem || '';
   // Destaca os trechos que devem ser personalizados antes do envio.
   const mensagemFormatada = escapar_html(mensagem).replace(
-    /\(nome do cliente\)|\(s\)|\(nome do escritório\/responsável\)|\(Grupo de empresas que estão em processo de entrada\)/gi,
+    /\(nome do cliente\)|\(s\)|\(nome do escritório\/responsável\)|\(Grupo de empresas que estão em processo de entrada\)|\(nome da empresa(?: do cliente)?\)|\(dia da semana\)|\(dia\)|\(mês\)|\(horário\)/gi,
     '<mark>$&</mark>'
   );
   const conteudo = mensagem.trim()
