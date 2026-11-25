@@ -484,7 +484,7 @@ a:focus-visible {
   display: none;
 }
 
-.procedimento summary {
+.procedimento > summary {
   list-style: none;
   display: flex;
   gap: 13px;
@@ -493,7 +493,7 @@ a:focus-visible {
   padding: 17px 18px;
 }
 
-.procedimento summary::-webkit-details-marker {
+.procedimento > summary::-webkit-details-marker {
   display: none;
 }
 
@@ -501,9 +501,78 @@ a:focus-visible {
   border-color: #b3c2ec;
 }
 
-.procedimento[open] summary {
+.procedimento[open] > summary {
   background: #e3f2fd;
   border-bottom: 1px solid #c8e2f5;
+}
+
+/* Modelo de mensagem vinculado a um passo do procedimento. */
+.mensagem_padrao {
+  width: fit-content;
+  max-width: min(100%, 64ch);
+  margin-top: 5px;
+  border: 1px solid #c8e2f5;
+  border-radius: 9px;
+  background: var(--lilas_claro);
+  color: var(--azul_escuro);
+  font-size: 13px;
+}
+
+.mensagem_padrao > summary {
+  padding: 4px 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.mensagem_padrao[open] > summary {
+  border-bottom: 1px solid #c8e2f5;
+}
+
+.template_email {
+  display: table;
+  margin-top: 5px;
+  padding: 4px 10px;
+  border: 1px solid #c8e2f5;
+  border-radius: 9px;
+  background: var(--lilas_claro);
+  color: var(--azul_escuro);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.template_email:hover {
+  border-color: var(--azul);
+}
+
+.mensagem_conteudo {
+  padding: 8px 12px;
+  border-radius: 0 0 8px 8px;
+  background: var(--branco);
+}
+
+.mensagem_conteudo p {
+  margin: 0 0 6px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.mensagem_conteudo mark {
+  background: #ffeb82;
+  color: inherit;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.mensagem_conteudo button {
+  padding: 3px 8px;
+  border: 1px solid #c8e2f5;
+  border-radius: 6px;
+  background: var(--lilas_claro);
+  color: var(--azul);
+  font: inherit;
+  cursor: pointer;
 }
 
 .numero {
@@ -642,6 +711,18 @@ a:focus-visible {
 .passos li::marker {
   font-weight: 850;
   color: var(--azul);
+}
+
+.itens_passo {
+  list-style: disc;
+  margin: 8px 0;
+  padding-left: 22px;
+}
+
+.passos .itens_passo > li {
+  margin-bottom: 3px;
+  padding-left: 2px;
+  font-size: 13px;
 }
 
 .subtitulo {
@@ -1030,7 +1111,7 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .procedimento summary {
+  .procedimento > summary {
     padding: 13px 12px;
     gap: 9px;
   }

@@ -236,6 +236,8 @@ window.DADOS_OPERACIONAIS = {
       "grupo": "cadastro",
       "resumo": "Cadastrar o cliente, criar o grupo e conferir seus participantes.",
       "sistema": "Gestta / Messenger / WhatsApp",
+      "url_documentada": "https://onvio.com.br/login/#/",
+      "rotulo_link": "Abrir Onvio",
       "fontes": [
         "whatsapp",
         "documentos"
@@ -252,11 +254,10 @@ window.DADOS_OPERACIONAIS = {
         "Acessar o Gestta.",
         "No canto superior esquerdo abrir o Messenger.",
         "Cadastrar o contato do cliente, conferindo o nome e o número de telefone. Usar o padrão “Nome do Cliente - Nome da Empresa”.",
-        "Solicitar ao cliente que salve o contato da IZZI para permitir a criação do grupo.",
+        "Enviar uma mensagem para o cliente Solicitando ao cliente que salve o contato da IZZI para permitir a criação do grupo.",
         "Criar o grupo no Messenger com o nome enviado pelo comercial no Slack. (processos de novos clientes)",
-        "Adicionar Samuel, Ana Paula, Matheus, Phelipe, Rafaela, Tharciso e o(s) cliente(s) ao(s) grupo(s).",
-        "Usar o celular da IZZI para adicionar a foto do(s) grupo(s).",
-        "Conferir as informações e os participantes antes de iniciar a comunicação."
+        "Adicionar Contato IZZI (Backup), Samuel, Ana Paula, Matheus, Phelipe, Rafaela, Tharciso e o(s) cliente(s) ao(s) grupo(s).", "Usar o celular da IZZI para adicionar a foto do(s) grupo(s).",
+        "Conferir os dados do grupo e confirmar se todos os participantes foram adicionados."
       ],
       "decisoes": [],
       "alertas": [],
@@ -266,7 +267,6 @@ window.DADOS_OPERACIONAIS = {
         "Base_unificada"
       ],
       "paralelo": [],
-      "url_documentada": "https://onvio.com.br/login/#/"
     },
     {
       "id": "solicitar_documentos",
@@ -275,6 +275,8 @@ window.DADOS_OPERACIONAIS = {
       "grupo": "cadastro",
       "resumo": "Apresentar o grupo, solicitar documentos, contatar a contabilidade atual e agendar reunião.",
       "sistema": "Gestta Messenger / WhatsApp",
+      "url_documentada": "https://onvio.com.br/login/#/",
+      "rotulo_link": "Abrir Onvio",
       "fontes": [
         "documentos",
         "whatsapp"
@@ -287,17 +289,51 @@ window.DADOS_OPERACIONAIS = {
         "Grupo criado com o cliente e os colaboradores da IZZI."
       ],
       "passos": [
-        "Informar aos clientes o objetivo do grupo.",
-        "Perguntar se desejam incluir mais alguém ao grupo.",
+        "Acessar o messenger.",
+        "Acessar o grupo de comunicação com o cliente.",
+        {
+          "instrucao": "Informar aos clientes o objetivo do grupo e perguntar se desejam adicionar mais alguém.",
+          // Cole a mensagem oficial entre as crases. As quebras de linha serão preservadas.
+          "mensagem": `Bom dia! (nome do cliente). Tudo bem?
+Criei este grupo para acompanhar seu processo de entrada na IZZI.
+Este grupo é integrado ao nosso sistema, então sempre que precisar, envie por aqui mesmo — a equipe responsável será notificada!
+
+Existe mais alguém que queira adicionar ao(s) grupo(s)?`
+        },
         "Adicionar as pessoas indicadas pelo cliente.",
-        "Após a resposta do cliente, solicitar;",
-        "Contrato Social.",
-        "Telefone e e-mail da contabilidade atual do cliente.",
-        "Três últimas folhas de pagamento.",
-        "Fichas de registro dos funcionários.",
-        "Login do Empregador Web.",
-        "Ao receber o contato da contabilidade atual do cliente, enviar uma mensagem para contabilidade solicitando um endereço de e-mail deles.",
-        "Solicitar a atual contabilidade do cliente os documentos por e-mail.",
+        {
+          "instrucao": "Após a confirmação dos participantes, solicitar ao cliente os documentos e acessos abaixo.",
+          "itens": [
+            "Contrato social.",
+            "Telefone e e-mail da contabilidade atual.",
+            "Três últimas folhas de pagamento.",
+            "Fichas de registro dos funcionários.",
+            "Certificado digital.",
+            "Login do Empregador Web."
+          ],
+          // Cole a mensagem oficial entre as crases. As quebras de linha serão preservadas.
+          "mensagem": `Para dar sequência precisaremos dos seguintes documentos:
+
+- Contrato social
+- Contato da atual contabiliadade (telefone e e-mail)
+- Três útimas folhas de pagamento
+- Fichas de registro dos colaboradores
+- Login de acesso ao Empregador Web
+- Certificado digital`
+        },
+        {
+          "instrucao": "Ao receber o contato da contabilidade atual do cliente, enviar uma mensagem para contabilidade solicitando um endereço de e-mail deles.",
+          "mensagem": `Bom dia/Boa tarde, (nome do escritório/responsável). Tudo bem?
+
+Somos da IZZI Contabilidade, o novo escritório responsável pelas empresas do (Grupo de empresas que estão em processo de entrada). Neste primeiro momento, precisaremos solicitar alguns documentos e informações para dar andamento às demandas.
+
+Poderia, por gentileza, nos informar o melhor e-mail para enviarmos essa solicitação?`
+        },
+        {
+          "instrucao": "Solicitar à contabilidade atual do cliente os documentos por e-mail.",
+          "pdf": "documentos/templates/antiga-contabilidade.pdf",
+          "rotulo_pdf": "Template do e-mail"
+        },
         "Agendar a reunião de onboarding com o cliente.",
       ],
       "alertas": [],
@@ -319,6 +355,8 @@ window.DADOS_OPERACIONAIS = {
       "grupo": "cadastro",
       "resumo": "Abrir as tarefas de entrada conforme a origem do cliente e conferir os departamentos envolvidos.",
       "sistema": "Gestta / Onvio Processos",
+      "url_documentada": "https://onvio.com.br/login/#/",
+      "rotulo_link": "Abrir Onvio",
       "fontes": [
         "rascunho_processo"
       ],

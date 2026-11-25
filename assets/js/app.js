@@ -125,7 +125,7 @@ function quadro_procuradora() {
  * Copia um dado do quadro da procuradora para a área de transferência (com fallback para execCommand).
  */
 async function copiar_procuradora(botao) {
-  const quadro = botao.closest('.quadro_procuradora');
+  const quadro = botao.closest('.quadro_procuradora, .mensagem_padrao');
   const texto = botao.previousElementSibling.textContent;
   let copiado = false;
 
@@ -154,6 +154,39 @@ async function copiar_procuradora(botao) {
  * incluindo cabeçalho, objetivo, pré-requisitos, atalho para fluxograma, passo a passo,
  * alertas, decisões, critério de conclusão, dependências, paralelismo e fontes.
  */
+function renderizar_passo(passo) {
+  if (typeof passo === 'string') return `<li>${escapar_html(passo)}</li>`;
+
+  if (passo.pdf) {
+    return `<li>${escapar_html(passo.instrucao)}
+      <a class="template_email" href="${escapar_html(passo.pdf)}" target="_blank" rel="noopener noreferrer">${escapar_html(passo.rotulo_pdf || 'Abrir PDF')} ↗</a>
+    </li>`;
+  }
+
+  const mensagem = passo.mensagem || '';
+  // Destaca os trechos que devem ser personalizados antes do envio.
+  const mensagemFormatada = escapar_html(mensagem).replace(
+    /\(nome do cliente\)|\(s\)|\(nome do escritório\/responsável\)|\(Grupo de empresas que estão em processo de entrada\)/gi,
+    '<mark>$&</mark>'
+  );
+  const conteudo = mensagem.trim()
+    ? `<p>${mensagemFormatada}</p>
+       <button type="button" data-copiar-mensagem aria-label="Copiar mensagem">Copiar mensagem</button>
+       <span role="status"></span>`
+    : '<p>Mensagem padrão pendente de cadastro.</p>';
+
+  const itens = passo.itens?.length
+    ? `<ul class="itens_passo">${passo.itens.map(item => `<li>${escapar_html(item)}</li>`).join('')}</ul>`
+    : '';
+
+  return `<li>${escapar_html(passo.instrucao)}${itens}
+    <details class="mensagem_padrao">
+      <summary>Mensagem padrão</summary>
+      <div class="mensagem_conteudo">${conteudo}</div>
+    </details>
+  </li>`;
+}
+
 function renderizar_etapa(etapa) {
   const fontes_referencias = etapa.fontes.map(id => {
     const f = mapa_fontes.get(id);
@@ -180,7 +213,7 @@ function renderizar_etapa(etapa) {
     `<span class="chip ${classe_etiqueta(texto)}">${escapar_html(texto)}</span>`
   ).join('');
 
-  const passos = `<h4 class="subtitulo">Passo a passo</h4><ol class="passos">${etapa.passos.map(passo => `<li>${escapar_html(passo)}</li>`).join('')}</ol>`;
+  const passos = `<h4 class="subtitulo">Passo a passo</h4><ol class="passos">${etapa.passos.map(renderizar_passo).join('')}</ol>`;
 
   return `<details class="procedimento" id="${escapar_html(etapa.id)}" data_grupo="${escapar_html(etapa.grupo)}">`
     + `<summary>`
@@ -350,7 +383,7 @@ function atualizar_resultados(grupo) {
         const item = entrada(
           e.numero + ' · ' + e.titulo,
           '',
-          [...(e.pre || []), ...(e.passos || [])].join(' '),
+          [...(e.pre || []), ...e.passos.map(p => typeof p === 'string' ? p : [p.instrucao, ...(p.itens || [])].join(' '))].join(' '),
           { etapa: e.id }
         );
         item.secao = nomes_grupos[grupo];
@@ -594,7 +627,7 @@ function iniciar() {
 
   // Delegação global de cliques para botões de cópia, menu, fases, links internos e expandir/recolher
   document.addEventListener('click', ev => {
-    const procuradora = ev.target.closest('[data-copiar-procuradora]');
+    const procuradora = ev.target.closest('[data-copiar-procuradora], [data-copiar-mensagem]');
     if (procuradora) {
       copiar_procuradora(procuradora);
       return;
