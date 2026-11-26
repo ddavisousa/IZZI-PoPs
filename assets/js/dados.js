@@ -211,7 +211,7 @@ window.DADOS_OPERACIONAIS = {
         "Na barra lateral, acessar “Base de Clientes”.",
         "Clicar em “Nova” para cadastrar o cliente.",
         "Informar o código (Dominio) da empresa.",
-        "Em “Gestão de cliente”, selecionar o cliente que está sendo cadastrado.",
+        "Em “Gestão de Cliente”, selecionar o cliente que está sendo cadastrado.",
         "Informar o nome fantasia do cliente.",
         "Informar a razão social do cliente.",
         "Informar o CNPJ do cliente.",
@@ -252,10 +252,16 @@ window.DADOS_OPERACIONAIS = {
       ],
       "passos": [
         "Acessar o Gestta.",
-        "No canto superior esquerdo abrir o Messenger.",
+        "No canto superior esquerdo, abrir o Messenger.",
         "Cadastrar o contato do cliente, conferindo o nome e o número de telefone. Usar o padrão “Nome do Cliente - Nome da Empresa”.",
-        "Enviar uma mensagem para o cliente Solicitando ao cliente que salve o contato da IZZI para permitir a criação do grupo.",
-        "Criar o grupo no Messenger com o nome enviado pelo comercial no Slack. (processos de novos clientes)",
+        {
+          "instrucao": "Enviar uma mensagem ao cliente solicitando que salve o contato da IZZI para permitir a criação do grupo.",
+          "mensagem": `Olá, (nome do cliente), tudo bem?
+Sou o Davi, do time de Sucesso do Cliente da IZZI e estou responsável pela criação do grupo para comunicação entre nós.
+
+Para que eu consiga te incluir no grupo, pode salvar esse nosso contato, por gentileza?`
+        },
+        "Criar o grupo no Messenger com o nome enviado pelo comercial no canal “processos de novos clientes” do Slack.",
         "Adicionar Contato IZZI (Backup), Samuel, Ana Paula, Matheus, Phelipe, Rafaela, Tharciso e o(s) cliente(s) ao(s) grupo(s).", "Usar o celular da IZZI para adicionar a foto do(s) grupo(s).",
         "Conferir os dados do grupo e confirmar se todos os participantes foram adicionados."
       ],
@@ -289,14 +295,14 @@ window.DADOS_OPERACIONAIS = {
         "Grupo criado com o cliente e os colaboradores da IZZI."
       ],
       "passos": [
-        "Acessar o messenger.",
+        "Acessar o Messenger.",
         "Acessar o grupo de comunicação com o cliente.",
         {
           "instrucao": "Informar aos clientes o objetivo do grupo e perguntar se desejam adicionar mais alguém.",
           // Cole a mensagem oficial entre as crases. As quebras de linha serão preservadas.
           "mensagem": `Bom dia! (nome do cliente). Tudo bem?
 Criei este grupo para acompanhar seu processo de entrada na IZZI.
-Este grupo é integrado ao nosso sistema, então sempre que precisar, envie por aqui mesmo — a equipe responsável será notificada!
+Este grupo é integrado ao nosso sistema, então, sempre que precisar, envie por aqui mesmo — a equipe responsável será notificada!
 
 Existe mais alguém que queira adicionar ao(s) grupo(s)?`
         },
@@ -330,13 +336,8 @@ Somos da IZZI Contabilidade, o novo escritório responsável pelas empresas do (
 Poderia, por gentileza, nos informar o melhor e-mail para enviarmos essa solicitação?`
         },
         {
-          "instrucao": "Solicitar à contabilidade atual do cliente os documentos por e-mail.",
-          "pdf": "documentos/templates/antiga-contabilidade.pdf",
-          "rotulo_pdf": "Template do e-mail"
-        },
-        {
           "instrucao": "Agendar a reunião de onboarding com o cliente.",
-          "mensagem": `Nosso próximo passo é agendarmos nossa reunião de onboarding, momento em que faremos a integração entre nossas empresas, (nome da empresa do cliente) e IZZI. Essa reunião é virtual, tem duração aproximada de 1h, abordará os principais pontos da nossa parceria e os próximos passos.
+          "mensagem": `Nosso próximo passo é agendarmos nossa reunião de onboarding, momento em que faremos a integração entre nossas empresas, (nome da empresa do cliente) e IZZI. A reunião será virtual, terá duração aproximada de uma hora e abordará os principais pontos da nossa parceria e os próximos passos.
 
 Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
 (horário).`
@@ -414,10 +415,38 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
         "Razão social e CNPJ da empresa cliente."
       ],
       "passos": [
-        "Confirmar o endereço de e-mail da contabilidade anterior e verificar se o escopo dos serviços do cliente é completo ou somente fiscal.",
-        "Selecionar os e-mails padrão conforme o escopo: para escopo completo, DP, Societário e Fiscal; para escopo somente fiscal, Societário e Fiscal.",
+        "Confirmar o endereço de e-mail da contabilidade atual do cliente.",
+        "Verificar se o escopo dos serviços do cliente é completo ou somente fiscal.",
+        {
+          "instrucao": "Selecionar os e-mails padrão conforme o escopo:",
+          "itens": [
+            "Escopo completo: Fiscal, DP e Societário.",
+            "Escopo somente fiscal: Fiscal."
+          ],
+          // Cole a mensagem oficial entre as crases. As quebras de linha serão preservadas.
+          "mensagem": `Para dar sequência, precisaremos dos seguintes documentos:
+
+- DP`
+        },
         "Conferir cada e-mail por completo antes de enviar, incluindo destinatário, assunto, conteúdo e anexos.",
-        "Enviar à contabilidade anterior os e-mails padrão selecionados e conferidos."
+        "Enviar à contabilidade anterior os e-mails padrão selecionados e conferidos.",
+        {
+          "instrucao": "Solicitar à contabilidade atual do cliente os documentos por e-mail.",
+          "pdfs": [
+            {
+              "rotulo": "Societário",
+              "arquivo": "documentos/templates/societario.pdf"
+            },
+            {
+              "rotulo": "DP",
+              "arquivo": "documentos/templates/dp.pdf"
+            },
+            {
+              "rotulo": "Contábil e fiscal",
+              "arquivo": "documentos/templates/contabil-e-fiscal.pdf"
+            }
+          ]
+        }
       ],
       "alertas": [
         "Não aguardar resposta da antiga contabilidade para iniciar atividades independentes."
@@ -718,10 +747,11 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
         "CNPJ da IZZI: 30.182.037/0001-49."
       ],
       "passos": [
-        "Em janela anônima, acessar o portal Conectividade Social da CAIXA e “Acesse o Conectividade Social ICP V2”.",
-        "Para certificado ainda não registrado, abrir “Registro” → “Registrar Certificado”.",
+        "Em janela anônima, acessar o portal Conectividade Social da CAIXA.",
+        "Clicar em Acesse o “Conectividade Social ICP V2”.",
+        "Clicar em “Registro” → “Registrar Certificado”.",
         "Selecionar o certificado da empresa e o perfil “Empresa”.",
-        "Aceitar o contrato de registro e as confirmações necessárias; baixar o contrato.",
+        "Aceitar o contrato de registro e as confirmações necessárias; baixar o comprovante.",
         "Renomear o registro para “Registro Conectividade Social - Nome do Cliente” e arquivar no local definido no POP.",
         "Voltar à página inicial ou abrir nova sessão para a procuração.",
         "Clicar em “Procuração” → “Outorgar”.",
@@ -751,7 +781,7 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
     {
       "id": "empregador_web_cadastrar_gestor",
       "numero": "4.1",
-      "titulo": "Empregador Web - Cadastrar gestor",
+      "titulo": "Empregador Web - cadastrar gestor",
       "grupo": "empregador",
       "resumo": "Cadastrar e confirmar o acesso do gestor ao Empregador Web.",
       "sistema": "Empregador Web / Notion",
@@ -792,7 +822,7 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
     {
       "id": "empregador_web",
       "numero": "4.2",
-      "titulo": "Empregador Web - Realizar procuração e consulta",
+      "titulo": "Empregador Web - realizar procuração e consulta",
       "grupo": "empregador",
       "resumo": "Cadastrar a procuração da IZZI e confirmar o registro na consulta do Empregador Web.",
       "sistema": "Empregador Web",
@@ -837,7 +867,7 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
     {
       "id": "reset_empregador_dataprev",
       "numero": "4.3",
-      "titulo": "Empregador Web - Reset pelo Portal do Cidadão",
+      "titulo": "Empregador Web - reset pelo Portal do Cidadão",
       "grupo": "empregador",
       "resumo": "Solicitar a desabilitação do cadastro anterior e acompanhar o pedido em “Meus Pedidos”.",
       "sistema": "Portal do Cidadão / Dataprev",
@@ -911,7 +941,7 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
         "Priorizar as ações executáveis pela IZZI dentro do prazo operacional de 24 horas.",
         "Quando houver dependência externa, registrar o documento/informação faltante e a tentativa já realizada no Gestta.",
         "Sem resposta à primeira mensagem/e-mail, tentar novo contato; se persistir, realizar ligação telefônica.",
-        "Se não houver resposta, registrar no Gestta como impedido e evidenciar suas tentativas de contato.",
+        "Se não houver resposta, registrar a atividade como impedida no Gestta e documentar as tentativas de contato.",
         "Quando houver impedimentos, informar o responsável interno para não ameaçar prazos ou outras atividades.",
         "Não encerrar o processo se restarem etapas pendentes."
       ],
@@ -1343,7 +1373,7 @@ Sugiro que a reunião aconteça no (dia da semana), (dia) de (mês), às
 window.FLUXOS_PESQUISA = [
   {
     "titulo": "Agência Net: procuração SEFAZ-DF",
-    "texto": "    Central de processos  Agência Net: procuração SEFAZ-DF  Conceder poderes fiscais pelo Agência Net quando o cliente pertence ao Distrito Federal.       3.3 · Procurações  Agência Net / SEFAZ-DF   Fluxo principal    Aplicabilidade  Confirmar cliente do DF  Verifique se o cliente é do Distrito Federal e se há CF/DF correspondente ao CNPJ.   →   Acesso  Entrar no Agência Net  Use o certificado digital do cliente e abra “Serviços” → “Procuração Eletrônica” → “Cadastrar Procuração Eletrônica”.   →   Tipo  Selecionar Para terceiros  Escolha “Para terceiros”, informe o CF/DF do cliente e clique em “Consultar”.    ↓    Procuradora  Preencher os dados da IZZI  Confira CNPJ, CRC, razão social e endereço na ficha atual. Informe o telefone do cliente ou da IZZI.   →   Poderes  Selecionar os poderes aprovados  O POP orienta selecionar todos os poderes; confira a autorização aplicável antes de avançar.   →   Validade  Conferir a opção Indeterminada  Selecione “Indeterminada” apenas se estiver disponível e autorizada. Revise e salve no portal.    ↓   Conclusão  Baixar e arquivar  Imprima ou baixe a procuração, renomeie com o nome do cliente e salve na pasta SEFAZ.     Se o cadastro não puder avançar    O cliente é do DF e possui CF/DF localizável?  Confirme o CNPJ na consulta de CF/DF antes de preencher o portal.   →    CF/DF encontrado  Siga o fluxo principal e confira os dados antes de salvar.    Cliente do DF sem CF/DF na consulta  Registre a ausência na Jornada do Cliente e informe os responsáveis para orientação.    Cliente fora do DF  Este POP não se aplica. Consulte a orientação do ente competente.       Pontos de conferência   Atenção:  Para empresas de fora do Distrito Federal, não é necessário emitir procuração SEFAZ-DF.   Procuração gerada e arquivada para cliente do DF.  Material de consulta operacional da IZZI. Consulte a etapa 3.3 na Central de POPs para o procedimento detalhado e as fontes.    ",
+    "texto": "    Central de processos  Agência Net: procuração SEFAZ-DF  Conceder poderes fiscais pelo portal Agência Net quando o cliente pertence ao Distrito Federal.       3.3 · Procurações  Agência Net / SEFAZ-DF   Fluxo principal    Aplicabilidade  Confirmar cliente do DF  Verifique se o cliente é do Distrito Federal e se há CF/DF correspondente ao CNPJ.   →   Acesso  Entrar no portal Agência Net  Use o certificado digital do cliente e abra “Serviços” → “Procuração Eletrônica” → “Cadastrar Procuração Eletrônica”.   →   Tipo  Selecionar Para terceiros  Escolha “Para terceiros”, informe o CF/DF do cliente e clique em “Consultar”.    ↓    Procuradora  Preencher os dados da IZZI  Confira CNPJ, CRC, razão social e endereço na ficha atual. Informe o telefone do cliente ou da IZZI.   →   Poderes  Selecionar os poderes aprovados  O POP orienta selecionar todos os poderes; confira a autorização aplicável antes de avançar.   →   Validade  Conferir a opção Indeterminada  Selecione “Indeterminada” apenas se estiver disponível e autorizada. Revise e salve no portal.    ↓   Conclusão  Baixar e arquivar  Imprima ou baixe a procuração, renomeie com o nome do cliente e salve na pasta SEFAZ.     Se o cadastro não puder avançar    O cliente é do DF e possui CF/DF localizável?  Confirme o CNPJ na consulta de CF/DF antes de preencher o portal.   →    CF/DF encontrado  Siga o fluxo principal e confira os dados antes de salvar.    Cliente do DF sem CF/DF na consulta  Registre a ausência na Jornada do Cliente e informe os responsáveis para orientação.    Cliente fora do DF  Este POP não se aplica. Consulte a orientação do ente competente.       Pontos de conferência   Atenção:  Para empresas de fora do Distrito Federal, não é necessário emitir procuração SEFAZ-DF.   Procuração gerada e arquivada para cliente do DF.  Material de consulta operacional da IZZI. Consulte a etapa 3.3 na Central de POPs para o procedimento detalhado e as fontes.    ",
     "url": "fluxogramas/3.3-fluxograma-agencia-net-sefaz-df.html"
   },
   {

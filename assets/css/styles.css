@@ -528,6 +528,17 @@ a:focus-visible {
   border-bottom: 1px solid #c8e2f5;
 }
 
+.templates_email {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.templates_email .template_email {
+  margin-top: 0;
+}
+
 .template_email {
   display: table;
   margin-top: 5px;

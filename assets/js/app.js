@@ -157,9 +157,10 @@ async function copiar_procuradora(botao) {
 function renderizar_passo(passo) {
   if (typeof passo === 'string') return `<li>${escapar_html(passo)}</li>`;
 
-  if (passo.pdf) {
+  if (passo.pdfs?.length || passo.pdf) {
+    const pdfs = passo.pdfs || [{ arquivo: passo.pdf, rotulo: passo.rotulo_pdf || 'Abrir PDF' }];
     return `<li>${escapar_html(passo.instrucao)}
-      <a class="template_email" href="${escapar_html(passo.pdf)}" target="_blank" rel="noopener noreferrer">${escapar_html(passo.rotulo_pdf || 'Abrir PDF')} ↗</a>
+      <div class="templates_email">${pdfs.map(pdf => `<a class="template_email" href="${escapar_html(pdf.arquivo)}" target="_blank" rel="noopener noreferrer">${escapar_html(pdf.rotulo)} ↗</a>`).join('')}</div>
     </li>`;
   }
 
@@ -180,10 +181,10 @@ function renderizar_passo(passo) {
     : '';
 
   return `<li>${escapar_html(passo.instrucao)}${itens}
-    <details class="mensagem_padrao">
+    ${'mensagem' in passo ? `<details class="mensagem_padrao">
       <summary>Mensagem padrão</summary>
       <div class="mensagem_conteudo">${conteudo}</div>
-    </details>
+    </details>` : ''}
   </li>`;
 }
 
